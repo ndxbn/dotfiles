@@ -26,7 +26,7 @@ shopt -s dotglob
 shopt -s globstar
 shopt -s histappend
 
-# aliases 
+# aliases
 ## cd
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -39,3 +39,4 @@ alias j='jobs'
 alias grep='grep --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -a --color=auto'
+alias llr='ls -lR --color=auto'
