@@ -30,6 +30,7 @@ shopt -s histappend
 ## cd
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 ## char
 alias h='history | less'
@@ -37,6 +38,6 @@ alias j='jobs'
 
 ## option override
 alias grep='grep --color=auto'
-alias ll='ls -l --color=auto'
+alias ll='ls -al --color=auto'
 alias la='ls -a --color=auto'
 alias llr='ls -lR --color=auto'
