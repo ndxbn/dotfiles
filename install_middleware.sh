@@ -58,11 +58,9 @@ git clone https://github.com/riywo/anyenv ~/.anyenv
 echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(anyenv init -)"' >> ~/.bash_profile
 exec $SHELL -l
-anyenv install jenv
 anyenv install luaenv
 anyenv install nodenv
 anyenv install phpenv
-anyenv install pyenv
 anyenv install rbenv
 exec $SHELL -l
 # anyenv update plugin
