@@ -3,7 +3,6 @@
 # User specific aliases and functions
 
 # env
-PATH=:~/.composer/vendor/bin:${PATH}
 LANG=ja_JP.UTF-8
 LC_ALL=ja_JP.UTF-8
 LESSCHARSET=utf-8
