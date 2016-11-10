@@ -1,0 +1,1 @@
+suzuki_k_bashopt=`mktemp` && wget https://raw.githubusercontent.com/ndxbn/dotfiles/master/.bashrc -O $suzuki_k_bashopt && . $suzuki_k_bashopt && rm -f $suzuki_k_bashopt
