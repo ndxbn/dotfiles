@@ -1,43 +1,42 @@
 # .bashrc
 
-# User specific aliases and functions
-
-# env
-LANG=ja_JP.UTF-8
-LC_ALL=ja_JP.UTF-8
-LESSCHARSET=utf-8
-EDITOR=vi
-DEPLOY_TYPE=dev
-export PATH LANG LC_ALL LESSCHARSET EDITOR DEPLOY_TYPE
-
 # UI
-PS1="[\u@\h:\W]"
+## e.g. 
+# (水 11月 09 23:15:30)ndxbn@test:~
+# [0]:$ date
+# 2016年 11月  9日 水曜日 23:15:34 JST
+# (水 11月 09 23:15:34)ndxbn@test:~
+# [0]:$ hoge
+# -bash: hoge: コマンドが見つかりません
+# (水 11月 09 23:15:36)ndxbn@test:~
+# [127]:$
+PS1="[(\d \t)\u@\H:\w]
+\`echo \$?\`:\$ "
 
-# file system
-umask 022
-
-# shopt
-export HISTSIZE=100000
-export HISTFILESIZE=300000
-export HISTTIMEFORMAT='%F %T '
+shopt -s autocd
+shopt -s checkjobs
 shopt -s checkwinsize
-shopt -s dotglob
-shopt -s globstar
-shopt -s histappend
+shopt -s cmdhist
 
-# aliases
 ## cd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-## char
+## the character
 alias h='history | less'
 alias j='jobs'
 
+## the with comma
+alias ,f='find . -type f | xargs grep'
+
 ## option override
 alias grep='grep --color=auto'
-alias ll='ls -al --color=auto'
 alias la='ls -a --color=auto'
+alias ll='ls -l --color=auto'
 alias lla='ls -la --color=auto'
 alias llr='ls -lR --color=auto'
+
+## command alias
+alias today='date +"%F"'
+alias now='date +"%F %T"'
