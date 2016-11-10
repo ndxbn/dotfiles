@@ -10,8 +10,7 @@
 # -bash: hoge: コマンドが見つかりません
 # (水 11月 09 23:15:36)ndxbn@test:~
 # [127]:$
-PS1="[(\d \t)\u@\H:\w]
-\`echo \$?\`:\$ "
+PS1="(\d \t)[\u@\H:\w]\n\`echo \$?\`:\$ "
 
 shopt -s autocd
 shopt -s checkjobs
