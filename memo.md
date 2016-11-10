@@ -1,3 +1,6 @@
+### CentOS7 に、最初にインストールとかしたいやつ
+
+```bash
 yum update -y
 yum -y install epel-release
 yum -y install\
@@ -66,3 +69,4 @@ exec $SHELL -l
 # anyenv update plugin
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+```
