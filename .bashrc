@@ -37,5 +37,7 @@ alias lla='ls -la --color=auto'
 alias llr='ls -lR --color=auto'
 
 ## command alias
+# these are used for file name or more.
+# if you want to check datetime at now, see prompt one.
 alias today='date +"%F"'
-alias now='date +"%F %T"'
+alias now='date +"%F_%H%M%S"'
