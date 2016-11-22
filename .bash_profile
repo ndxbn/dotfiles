@@ -15,10 +15,6 @@ EDITOR=vim
 DEPLOY_TYPE=dev
 export PATH LANG LC_ALL LESSCHARSET EDITOR DEPLOY_TYPE
 
-# UI
-export PS1="(\d \t)\u@\H:\W
-[\`echo \$?\`]:\$ "
-
 # file system
 # this may be "de facto"
 umask 022
