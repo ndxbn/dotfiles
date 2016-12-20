@@ -12,7 +12,7 @@
 # [127]:$
 PS1="(\d \t)[\u@\H:\w]\n\`echo \$?\`:\$ "
 
-# shell option
+## shell option
 shopt -s autocd
 shopt -s checkjobs
 shopt -s checkwinsize
