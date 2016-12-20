@@ -4,7 +4,7 @@ You should use bash after read [bash man page](https://www.gnu.org/software/bash
 
 # Usage
 
-## insatll all "dotfiles"
+## install all "dotfiles"
 以下のコマンドで、インストールできる。
 `curl -s https://ndxbn.github.io/dotfiles/install.sh | bash`
 
