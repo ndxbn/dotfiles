@@ -14,13 +14,7 @@ dotfilesを上書きしたり、設定できない環境も多々ある。
 例えば、「商用の本番環境へ、メンテナンスなどで直接アクセスせざるを得ない場合」などがそうだ。
 そんなときは、以下のコマンドを実行すれば、シェルのオプションだけを自分好みに設定できる。
 
-```bash
-suzuki_k_bashopt=`mktemp` && wget https://raw.githubusercontent.com/ndxbn/dotfiles/master/.bashrc -O $suzuki_k_bashopt && . $suzuki_k_bashopt && rm -f $suzuki_k_bashopt
-```
-
 * このコマンドレットは、 `.bashrc` を実行する。
-* このコマンドレットは、[https://goo.gl/L1WgWc](https://goo.gl/L1WgWc) からも参照できる。
-
 
 # 各ファイルの規約・方針
 
