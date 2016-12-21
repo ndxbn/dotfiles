@@ -34,7 +34,7 @@ alias j='jobs'
 # If it is "simple command", you should use "character" alias.
 alias ,f='find . -type f | xargs grep'
 
-## 2 character
+## aliases alias
 alias al='alias'
 alias ua='unalias'
 
