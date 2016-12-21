@@ -22,6 +22,7 @@ shopt -s cmdhist
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias ho="mkdir -p ~/`today` && cd ~/`today`"
 
 ## character
 # The first letter of simple command.
