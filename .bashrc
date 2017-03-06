@@ -18,6 +18,12 @@ shopt -s checkjobs
 shopt -s checkwinsize
 shopt -s cmdhist
 
+## date time strings for file name
+# these are used for file name or more.
+# if you want to check datetime at now, look to prompt.
+alias today='date +"%F"'
+alias now='date +"%F_%H%M%S"'
+
 ## cd shortcut
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -46,9 +52,3 @@ alias la='ls -a --color=auto'
 alias ll='ls -l --color=auto'
 alias lla='ls -la --color=auto'
 alias llr='ls -lR --color=auto'
-
-## date time strings for file name
-# these are used for file name or more.
-# if you want to check datetime at now, look to prompt.
-alias today='date +"%F"'
-alias now='date +"%F_%H%M%S"'
