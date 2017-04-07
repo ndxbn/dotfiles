@@ -3,7 +3,7 @@ You should use bash after read [bash man page](https://www.gnu.org/software/bash
 
 # Usage
 ## install all "dotfiles"
-~以下のコマンドで、インストールできる。~まだ実装してない。
+~以下のコマンドで、インストールできる。~ まだ実装してない。
 ```bash
 mkdir dotfiles && cd dotfiles
 git clone https://github.com/ndxbn/dotfiles .
