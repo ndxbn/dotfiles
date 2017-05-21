@@ -17,6 +17,6 @@ fi
 PATH="$HOME/.anyenv/bin:$HOME/bin:$PATH:$HOME/.local/bin"
 
 # anyenv
-if [ -x $(type anyenv) ]; then
+if [ $(type anyenv &> /dev/null) ]; then
     eval "$(anyenv init -)"
 fi
