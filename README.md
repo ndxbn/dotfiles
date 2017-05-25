@@ -11,7 +11,11 @@ home ディレクトリの dotfile を上書きするという、クソみたい
 
 ```bash
 git clone https://github.com/ndxbn/dotfiles
+cd dotfiles
+bash install.sh
+exec bash -l
 ```
+
 # 各ファイルの規約・方針
 ## .bashrc
 自由にファイルとかを配置できない環境で、ログイン中のbashに自分好みの設定を適用するスクリプト。
