@@ -1,0 +1,7 @@
+# history config
+# History will modify a file. It means "the option has side-effect".
+# so, it should NOT write in "~/.bashrc" file
+export HISTSIZE=100000
+export HISTFILESIZE=300000
+export HISTTIMEFORMAT='%F %T '
+shopt -s histappend

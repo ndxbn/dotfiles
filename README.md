@@ -1,23 +1,22 @@
 # dotfiles
-You should use bash after read [bash man page](https://www.gnu.org/software/bash/manual/bash.html),
+
+# 前提知識
+
+* [about-bash-profile-bashrc-and-where-should-alias-be-written-in](http://stackoverflow.com/questions/902946/about-bash-profile-bashrc-and-where-should-alias-be-written-in)
+* [bash man page](https://www.gnu.org/software/bash/manual/bash.html)
 
 # Usage
-## install all "dotfiles"
-以下のコマンドで、インストールできる。
-`curl -s https://ndxbn.github.io/dotfiles/install.sh | bash`
+## install
+home ディレクトリの dotfile を上書きするという、クソみたいな実装をしてる。
 
-## only shell options
-dotfilesを上書きしたり、設定できない環境も多々ある。
-例えば、「商用の本番環境へ、メンテナンスなどで直接アクセスせざるを得ない場合」などがそうだ。
-そんなときは、以下のコマンドを実行すれば、シェルのオプションだけを自分好みに設定できる。
-
-* このコマンドレットは、 `.bashrc` を実行する。
+```bash
+git clone https://github.com/ndxbn/dotfiles
+cd dotfiles
+bash install.sh
+exec bash -l
+```
 
 # 各ファイルの規約・方針
-## .bash_profile
-環境変数とか、ディレクトリ構造の検証（assertion）とかをする。
-ログインシェルとして起動したときだけやればいい処理を書く。
-
 ## .bashrc
 自由にファイルとかを配置できない環境で、ログイン中のbashに自分好みの設定を適用するスクリプト。
 

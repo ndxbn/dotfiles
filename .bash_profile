@@ -1,28 +1,22 @@
 # .bash_profile
+
+# .profile.d
+for D in .profile.d/*
+do
+    . $D
+done
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
+    . ~/.bashrc
 fi
 
 # User specific environment and startup programs
 
 # env
-PATH=$HOME/bin:$PATH:$HOME/.local/bin
-LANG=ja_JP.UTF-8
-LC_ALL=ja_JP.UTF-8
-LESSCHARSET=utf-8
-EDITOR=vim
-DEPLOY_TYPE=dev
-export PATH LANG LC_ALL LESSCHARSET EDITOR DEPLOY_TYPE
+PATH="$HOME/.anyenv/bin:$HOME/bin:$PATH:$HOME/.local/bin"
 
-# file system
-# this may be "de facto"
-umask 022
-
-# history config
-# History will modify a file. It means "the option has side-effect".
-# so, it should NOT write in "~/.bashrc" file
-export HISTSIZE=100000
-export HISTFILESIZE=300000
-export HISTTIMEFORMAT='%F %T '
-shopt -s histappend
+# anyenv
+if [ $(type anyenv &> /dev/null) ]; then
+    eval "$(anyenv init -)"
+fi
