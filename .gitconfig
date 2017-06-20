@@ -1,0 +1,20 @@
+[user]
+	name = ndxbn
+	email = wc348nka@gmail.com
+[core]
+	autocrlf = false
+	excludefile = ~/.gitignore
+[push]
+	default = simple
+[alias]
+	co = checkout
+	sta = status
+	c = commit
+	br = branch
+	last = log -1 HEAD
+	sub = submodule
+	subf = "submodule foreach"
+[merge]
+	ff = false
+[init]
+	templateDir = ~/.git_template
