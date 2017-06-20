@@ -1,5 +1,16 @@
+# NOT dotfiles should ignore
 *
+
+# dotfiles are main contents
 !.*
+
+# dot directory has some not dotfiles, but their should not ignore.
+!.*/*
+
+# when install dotfiles, use this script.
+!install.sh
+
+# repository meta files
+## These should remove when install bootstrap
 !LICENSE
 !README.md
-!install.sh
