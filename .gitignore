@@ -4,8 +4,8 @@
 # dotfiles are main contents
 !.*
 
-# dot directory has some not dotfiles, but their should not ignore.
-!.*/*
+# dot directory has some not dotfiles, but their should include.
+!.*/**/*
 
 # when install dotfiles, use this script.
 !install.sh
