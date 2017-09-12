@@ -1,5 +1,0 @@
-## shell option
-shopt -s autocd
-shopt -s checkjobs
-shopt -s checkwinsize
-shopt -s cmdhist
