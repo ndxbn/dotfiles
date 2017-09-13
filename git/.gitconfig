@@ -1,3 +1,9 @@
+#
+# This is the config file, and
+# a '#' or ';' character indicates
+# a comment
+#
+
 [user]
 	name = ndxbn
 	email = wc348nka@gmail.com
@@ -20,3 +26,9 @@
 	default = simple
 [pull]
 	ff = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
