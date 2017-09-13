@@ -3,18 +3,20 @@
 	email = wc348nka@gmail.com
 [core]
 	autocrlf = false
-	excludefile = ~/.gitignore
-[push]
-	default = simple
+	excludesfile = ~/.gitignore
+[init]
+	templateDir = ~/.git_template
 [alias]
-	co = checkout
-	sta = status
 	c = commit
+	co = checkout
 	br = branch
+	sta = status
 	last = log -1 HEAD
 	sub = submodule
 	subf = "submodule foreach"
 [merge]
 	ff = false
-[init]
-	templateDir = ~/.git_template
+[push]
+	default = simple
+[pull]
+	ff = true
