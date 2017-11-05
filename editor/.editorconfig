@@ -8,16 +8,10 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-[*.{tpl,html}]
-indent_size = 2
-
 [*.{styl,less,sass,css}]
 indent_size = 2
 
 [*.rb]
-indent_size = 2
-
-[*.json]
 indent_size = 2
 
 [*.{yml,yaml}]
@@ -25,12 +19,3 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
-indent_size = 2
-
-[{package.json,composer.json}]
-indent_style = space
-indent_size = 2
-
-[*.{yml,yaml}]
-indent_style = space
-indent_size = 2
