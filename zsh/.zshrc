@@ -7,6 +7,11 @@ HISTFILE=~/.zsh_history
 # zplug
 source ~/.zplug/init.zsh
 
+zplug "zplug/zplug", hook-build:zplug\ --self-manage
+zplug "~/.zsh-plugins", from:local
+
+zplug "Tarrasch/zsh-bd"
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -15,3 +20,4 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
