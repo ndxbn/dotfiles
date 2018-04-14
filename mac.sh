@@ -14,6 +14,7 @@ mkdir -p ~/.local && touch ~/.local/dotfiles
 
 # install via brew
 brew install \
+  bc \
   curl \
   docker-compose
   jq \
