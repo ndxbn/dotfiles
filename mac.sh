@@ -29,4 +29,3 @@ brew cask install \
 # install zplug
 export ZPLUG_HOME=~/.zplug
 git clone https://github.com/zplug/zplug ${ZPLUG_HOME}
-

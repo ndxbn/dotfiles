@@ -10,4 +10,3 @@ alias t='tail -f'
 
 # default options
 alias grep='grep --color'
-

@@ -19,4 +19,3 @@ Windows では Docker を使う敷居が高くて現実的ではないので、�
 ## Mac での docker のインストールについて
 `brew install docker` は、`docker` コマンドのインストールであって、 `dockerd` のインストールではない。
 `dockerd` は Homebrew Cask でインストーラを取ってきて、 `/Application/Docker.app` でインストールとセットアップする。
-
