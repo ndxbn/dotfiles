@@ -16,7 +16,9 @@ mkdir -p ~/.local && touch ~/.local/dotfiles
 brew install \
   bc \
   curl \
-  docker-compose
+  docker-compose \
+  gawk \
+  gnu-sed \
   jq \
   util-linux \
   tmux \
