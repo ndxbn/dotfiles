@@ -9,7 +9,7 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 - `bash centos.sh`
 - `bash windows.sh`
 
-Ansible などの Configuration ステップでのツールを使うことも考えたのだけれど、あのへんは Immutable Infrastracture を前提にしたツールなので、dotfiles を使うようなユースケースとは合わない。そもそも、 Provisioning Toolchain 自体が Immutable Infrastructure の文脈で登場した概念だと思う。
+Ansible などの Configuration ステップでのツールを使うことも考えたのだけれど、あのへんは Immutable infrastructure を前提にしたツールなので、dotfiles を使うようなユースケースとは合わない。そもそも、 Provisioning Toolchain 自体が Immutable infrastructure の文脈で登場した概念だと思う。
 
 Windows では Docker を使う敷居が高くて現実的ではないので、インストールしていない。
 
