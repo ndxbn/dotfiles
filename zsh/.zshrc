@@ -1,5 +1,5 @@
 # zsh options
-## hisotry
+## history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
