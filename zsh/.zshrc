@@ -11,6 +11,9 @@ zplug "zplug/zplug", hook-build:zplug\ --self-manage
 zplug "~/.zsh-plugins", from:local
 
 zplug "Tarrasch/zsh-bd"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "

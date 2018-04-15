@@ -12,8 +12,11 @@
 [init]
 	templateDir = ~/.git_template
 [alias]
+	a = add
+	c = commit
 	co = checkout
 	sub = submodule
+	logg = log --graph
 [merge]
 	ff = false
 [pull]
