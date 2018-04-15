@@ -1,16 +1,11 @@
 #!/bin/bash
 set -eu
 
-if [ -e ~/.local/dotfiles ]; then
-  echo You have run dotfile installer yet.
-  exit 1
-fi
-
-mkdir -p ~/.local && touch ~/.local/dotfiles
-
 # install Home Brew
 # https://brew.sh/
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! type brew  > /dev/null; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # install via brew
 brew install \
@@ -30,4 +25,6 @@ brew cask install \
 
 # install zplug
 export ZPLUG_HOME=~/.zplug
-git clone https://github.com/zplug/zplug ${ZPLUG_HOME}
+if [[ ! -e ${ZPLUG_HOME} ]]; then
+  git clone https://github.com/zplug/zplug ${ZPLUG_HOME}
+fi
