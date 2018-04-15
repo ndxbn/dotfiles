@@ -12,6 +12,7 @@ brew install \
   bc \
   curl \
   docker-compose \
+  hub \
   gawk \
   gnu-sed \
   jq \
