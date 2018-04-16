@@ -17,6 +17,7 @@
 	co = checkout
 	sub = submodule
 	logg = log --graph
+	fe = fetch -apn
 [merge]
 	ff = false
 [pull]
