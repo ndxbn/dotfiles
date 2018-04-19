@@ -18,6 +18,7 @@
 	sub = submodule
 	logg = log --graph
 	fe = fetch -apn
+	pullupstream = pull upstream master
 [merge]
 	ff = false
 [pull]
