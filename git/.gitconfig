@@ -22,6 +22,8 @@
 	ff = false
 [pull]
 	ff = true
+[push]
+	followTags = true
 
 [filter "lfs"]
 	process = git-lfs filter-process
