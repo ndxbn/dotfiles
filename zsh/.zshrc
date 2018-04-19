@@ -13,11 +13,12 @@ PATH="./vendor/bin:${PATH}"
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:zplug\ --self-manage
-zplug "~/.zsh-plugins", from:local
+zplug "~/.zsh-plugin", from:local
+zplug "~/.zsh-theme", from:local, as:theme
 
 zplug "Tarrasch/zsh-bd"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
