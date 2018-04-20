@@ -13,13 +13,16 @@ services:
       - MYSQL_USER=ndxbn
       - MYSQL_PASSWORD=secret
       - MYSQL_ROOT_PASSWORD=secret
+  mongo:
+     image: mongo
+     ports:
+       - "27017:27017"
   rabbitmq:
     image: rabbitmq:management
     ports:
+      - "5672:5672"
+      - "5671:5671"
       - "25672:15672"
-    environment:
-      - RABBITMQ_DEFAULT_USER=ndxbn
-      - RABBITMQ_DEFAULT_PASS=secret
   zookeeper:
     image: zookeeper
     ports:
@@ -38,7 +41,7 @@ services:
       - "9000:9000"
     environment:
       - MINIO_ACCESS_KEY=access
-      - MINIO_SECRET_KEY=secretkey
+      - MINIO_SECRET_KEY=secretKey
     entrypoint:
       - minio
       - server
