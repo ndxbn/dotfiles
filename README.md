@@ -9,10 +9,6 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 - `bash centos.sh`
 - `bash windows.sh`
 
-Ansible などの Configuration ステップでのツールを使うことも考えたのだけれど、あのへんは Immutable infrastructure を前提にしたツールなので、dotfiles を使うようなユースケースとは合わない。そもそも、 Provisioning Toolchain 自体が Immutable infrastructure の文脈で登場した概念だと思う。
-
-Windows では Docker を使う敷居が高くて現実的ではないので、インストールしていない。
-
 ## dotfiles
 [GNU Stow](https://www.gnu.org/software/stow/) を使用する。
 
