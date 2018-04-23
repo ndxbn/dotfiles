@@ -22,7 +22,8 @@ brew install \
   zsh
 
 brew cask install \
-  docker
+  docker \
+  iterm2
 
 # install zplug
 export ZPLUG_HOME=~/.zplug
