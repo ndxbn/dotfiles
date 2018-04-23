@@ -20,6 +20,7 @@ zplug "~/.zsh_theme.d", from:local, as:theme
 zplug "Tarrasch/zsh-bd"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "plugins/docker", from:oh-my-zsh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
