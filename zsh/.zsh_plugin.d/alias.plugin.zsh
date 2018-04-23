@@ -11,3 +11,8 @@ alias zplugclean='zplug clear && zplug clean'
 
 # default options
 alias grep='grep --color'
+
+# overrides
+alias cd='pushd'
+alias bd='popd'
+alias stack='dirs'
