@@ -1,0 +1,30 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+
+
+# Vagrant
+.vagrant/
+
