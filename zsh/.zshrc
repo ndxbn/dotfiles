@@ -4,11 +4,6 @@ HISTSIZE=1000000000
 SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 
-# PATH
-PATH="${HOME}/.local/.bin:${HOME}/bin:${PATH}"
-PATH="./node_modules/.bin:${PATH}"
-PATH="./vendor/bin:${PATH}"
-
 # zplug
 source ~/.zplug/init.zsh
 
@@ -30,3 +25,4 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
