@@ -12,7 +12,6 @@ zplug "zplug/zplug", hook-build:zplug\ --self-manage
 zplug "~/.zsh_plugin.d", from:local
 zplug "~/.zsh_theme.d", from:local, as:theme
 
-zplug "Tarrasch/zsh-bd"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/docker", from:oh-my-zsh
