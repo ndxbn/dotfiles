@@ -99,6 +99,6 @@ cd ~
 # install zplug
 export ZPLUG_HOME=~/.zplug
 if [[ ! -e ${ZPLUG_HOME} ]]; then
-  git clone https://github.com/zplug/zplug ${ZPLUG_HOME}
+  git clone https://github.com/39e/zplug ${ZPLUG_HOME}
 fi
 
