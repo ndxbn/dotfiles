@@ -5,6 +5,8 @@ LOCAL_PREFIX=~/.local
 
 # install via yum
 sudo yum -y install \
+  libevent-devel \
+  ncursis-devel \
   bc \
   curl \
   wget
