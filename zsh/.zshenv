@@ -17,7 +17,7 @@ if [ "Darwin" = $(uname -s) ]; then
 fi
 
 ## user land
-PATH="${HOME}/.local/.bin:${HOME}/bin:${PATH}"
+PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
