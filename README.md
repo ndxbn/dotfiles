@@ -34,6 +34,8 @@ Well-Known Port なものは、ホストOS 直上で動いている。
 5672  | RabbitMQ
 25672 | RabbitMQ
 6379  | Redis
+8080  | Jenkins
+50000 | Jenkins
 9000  | minio
 27017 | MongoDB
 
