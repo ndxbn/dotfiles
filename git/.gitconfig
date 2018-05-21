@@ -19,6 +19,7 @@
 	logg = log --graph
 	fe = fetch -apn
 	pullupstream = pull upstream master
+	subup = submodule foreach git pull origin master
 [merge]
 	ff = false
 [pull]
