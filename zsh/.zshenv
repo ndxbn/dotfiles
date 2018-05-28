@@ -23,5 +23,9 @@ PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
 
+# TERMINFO
+TERMINFO=~/.terminfo
+
 # zplug
 ZPLUG_HOME=~/.zplug
+
