@@ -18,9 +18,8 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 
 # その他
 ### 使用しているポートとサービス
-Well-Known Port なものは、ホストOS 直上で動いている。
-そうでないものは、Docker 上で動いている。
-
+1024番以下のポートを使用するプロセスは、 `root` ユーザがホストOS 直上で起動する。
+そうでないものは、常用の一般ユーザが Docker で動かしている。
 
 ポート番号 | サービス
 --:   | :--
@@ -38,4 +37,3 @@ Well-Known Port なものは、ホストOS 直上で動いている。
 50000 | Jenkins
 9000  | minio
 27017 | MongoDB
-
