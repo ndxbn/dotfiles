@@ -27,6 +27,10 @@
 [push]
 	followTags = true
 
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
