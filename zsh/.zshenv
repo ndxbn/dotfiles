@@ -19,6 +19,9 @@ fi
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
+## anyenv
+PATH="${HOME}/.anyenv/bin:${PATH}"
+
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
