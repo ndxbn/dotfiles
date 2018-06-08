@@ -36,4 +36,5 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 8080  | Jenkins
 50000 | Jenkins
 9000  | minio
+18000 | PlantUML Server
 27017 | MongoDB
