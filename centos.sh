@@ -6,7 +6,7 @@ LOCAL_PREFIX=~/.local
 # install via yum
 sudo yum -y install \
   libevent-devel \
-  ncursis-devel \
+  ncurses-devel \
   bc \
   curl \
   wget
@@ -19,7 +19,7 @@ cd /tmp
 wget https://sourceforge.net/projects/zsh/files/zsh/5.5.1/zsh-5.5.1.tar.gz/download -O zsh.tar.gz
 tar xf zsh.tar.gz
 cd zsh-5.5.1
-./configure --prefix=$LOCAL_PREFIX
+./configure --prefix=$LOCAL_PREFIX --with-tcsetpgrp
 make -j4 && make install
 cd ..
 rm -rf zsh.tar.gz zsh-5.5.1
@@ -101,4 +101,3 @@ export ZPLUG_HOME=~/.zplug
 if [[ ! -e ${ZPLUG_HOME} ]]; then
   git clone https://github.com/zplug/zplug ${ZPLUG_HOME}
 fi
-
