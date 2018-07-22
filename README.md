@@ -1,25 +1,31 @@
 # dotfiles
 My Dotfiles and Configuration Scripts (of provisioning toolchain)
 
+# Requirements
+
+- [GNU Stow](https://www.gnu.org/software/stow/)
+
 # インストール
-## Configuration of Provisioning Toolchain
-各環境ごとのスクリプトがあるので、それを実行する。
 
-- `bash mac.sh`
-- `bash centos.sh`
-- `bash windows.sh`
+```bash
+git clone https://github.com/ndxbn/dotfiles ~/dotfiles
+pushd ~/dotfiles
+stow */
+popd
+```
 
-## dotfiles
-[GNU Stow](https://www.gnu.org/software/stow/) を使用する。
-
+# 注意事項など
 ## Mac での docker のインストールについて
-`brew install docker` は、`docker` コマンドのインストールであって、 `dockerd` のインストールではない。
-`dockerd` は Homebrew Cask でインストーラを取ってきて、 `/Application/Docker.app` でインストールとセットアップする。
+`brew install docker` は、`docker` コマンドのインストールであって、 `dockerd` のインストールではありません。
+`dockerd` は Homebrew Cask でインストーラを取ってきて、 `/Application/Docker.app` でインストールとセットアップしてください。
 
 # その他
 ### 使用しているポートとサービス
-1024番以下のポートを使用するプロセスは、 `root` ユーザがホストOS 直上で起動する。
-そうでないものは、常用の一般ユーザが Docker で動かしている。
+1023番以下のポートを使用するプロセスは、 `root` ユーザがホストOS 直上で起動する用途で使用します。
+そうでないものは、常用の一般ユーザが Docker で動かすようにしています。
+
+1023番ポートを境界にしているのは、[IANA の System Port の範囲](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)に合わせるためです。
+System Port 以外はｍポート番号とそのポートを使うサービスが一致していないことがあります。
 
 ポート番号 | サービス
 --:   | :--
