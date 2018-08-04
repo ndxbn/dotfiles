@@ -46,10 +46,6 @@ services:
       - minio
       - server
       - /export
-  grafana:
-    image: "grafana/grafana"
-    ports:
-      - "3000:3000"
   jenkins:
     image: "jenkins"
     ports:
