@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_DATABASE=grim
+      - MYSQL_DATABASE=development
       - MYSQL_USER=ndxbn
       - MYSQL_PASSWORD=secret
       - MYSQL_ROOT_PASSWORD=secret
