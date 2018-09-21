@@ -41,16 +41,11 @@ services:
       - "9000:9000"
     environment:
       - MINIO_ACCESS_KEY=access
-      - MINIO_SECRET_KEY=secretKey
+      - MINIO_SECRET_KEY=secret
     entrypoint:
       - minio
       - server
       - /export
-  jenkins:
-    image: "jenkins"
-    ports:
-      - "8080:8080"
-      - "50000:50000"
   plantuml:
     image: "plantuml/plantuml-server"
     ports:
