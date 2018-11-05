@@ -28,8 +28,9 @@
 	followTags = true
 
 [remote "origin"]
-	fetch = +refs/zz_heads/*:refs/remotes/origin/*
-	fetch = +refs/zz_pull/*/head:refs/remotes/origin/pr/*
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
+
 
 [filter "lfs"]
 	process = git-lfs filter-process
