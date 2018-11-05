@@ -10,14 +10,9 @@
 	autocrlf = false
 	excludesfile = ~/.gitignore
 [init]
-	templateDir = ~/.git_template
 [alias]
-	a = add
-	c = commit
-	co = checkout
 	sub = submodule
 	logg = log --graph
-	fe = fetch -apn
 	pullupstream = pull upstream master
 	subup = submodule foreach git pull origin master
 [merge]
@@ -30,7 +25,6 @@
 [remote "origin"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
 	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
-
 
 [filter "lfs"]
 	process = git-lfs filter-process
