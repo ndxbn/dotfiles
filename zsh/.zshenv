@@ -18,6 +18,7 @@ fi
 
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
+EDITOR="vim"
 
 ## anyenv
 PATH="${HOME}/.anyenv/bin:${PATH}"
