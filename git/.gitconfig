@@ -24,7 +24,6 @@
 	followTags = true
 
 [remote "origin"]
-	fetch = +refs/heads/*:refs/remotes/origin/*
 	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
 
 [filter "lfs"]
