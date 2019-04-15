@@ -29,4 +29,3 @@ EDITOR="vim"
 TERMINFO=~/.terminfo
 
 ZPLUG_HOME=~/.zplug
-
