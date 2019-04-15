@@ -1,9 +1,9 @@
 setopt no_global_rcs
 
-# PATH MANPATH
+# PATH, MANPATH
 ## system wide
 typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-
+##
 if [ "Darwin" = $(uname -s) ]; then
   ## coreutils
   PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
@@ -15,21 +15,18 @@ if [ "Darwin" = $(uname -s) ]; then
   PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
   MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:${MANPATH}"
 fi
-
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
-EDITOR="vim"
-
-## anyenv
+### anyenv
 PATH="${HOME}/.anyenv/bin:${PATH}"
-
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
 
-# TERMINFO
+#
+EDITOR="vim"
+
 TERMINFO=~/.terminfo
 
-# zplug
 ZPLUG_HOME=~/.zplug
 
