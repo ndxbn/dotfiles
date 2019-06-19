@@ -1,0 +1,8 @@
+Host ndxbn.tokyo
+  HostName 39.111.244.132
+  User ndxbn
+  Port 2222
+
+Host *
+  User ndxbn
+
