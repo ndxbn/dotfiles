@@ -10,6 +10,6 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 ```bash
 git clone https://github.com/ndxbn/dotfiles ~/dotfiles
 pushd ~/dotfiles
-stow */
+./install.sh
 popd
 ```
