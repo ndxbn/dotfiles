@@ -7,3 +7,5 @@ alias lla='ls -Al'
 # default options
 alias grep='grep --color'
 
+# shorthand
+alias http-server='docker run -v `pwd`:/usr/share/nginx/html:ro  -p 8080:80 nginx:alpine'
