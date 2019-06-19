@@ -5,7 +5,7 @@ My Dotfiles and Configuration Scripts (of provisioning toolchain)
 
 - [GNU Stow](https://www.gnu.org/software/stow/)
 
-# インストール
+# Installation
 
 ```bash
 git clone https://github.com/ndxbn/dotfiles ~/dotfiles
