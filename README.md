@@ -2,7 +2,7 @@
 
 My Dotfiles and Configuration Scripts (of provisioning toolchain)
 
-We manage ISSUEs in https://github.com/ndxbn/ndxbn/issues .
+I manage ISSUEs in https://github.com/ndxbn/ndxbn/issues .
 
 # Requirements
 
