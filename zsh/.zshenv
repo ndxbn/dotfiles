@@ -14,6 +14,9 @@ if [ "Darwin" = $(uname -s) ]; then
   ## gnu-sed
   PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
   MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:${MANPATH}"
+  ## gettext
+  PATH="/usr/local/opt/gettext/bin:$PATH"
+  MANPATH="/usr/local/opt/gettext/share/man:${MANPATH}"
 fi
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
