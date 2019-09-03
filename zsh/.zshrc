@@ -26,6 +26,7 @@ zplug "arzzen/calc.plugin.zsh"
 zplug "popstas/zsh-command-time"
 
 ## commands
+zplug "github/hub", from:gh-r, as:command
 zplug "stedolan/jq", from:gh-r, as:command
 
 if ! zplug check --verbose; then
