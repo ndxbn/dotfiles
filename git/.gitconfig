@@ -23,6 +23,7 @@
 	ff = true
 [push]
 	followTags = true
+	default = simple
 
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
