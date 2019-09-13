@@ -27,7 +27,7 @@ PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
 
 #
-EDITOR="vim"
+EDITOR="vi"
 
 TERMINFO=~/.terminfo
 

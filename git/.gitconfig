@@ -10,7 +10,7 @@
 	autocrlf = false
 	excludesfile = ~/.gitignore
 	longpaths = true
-	editor = vim
+	editor = vi
 [init]
 [alias]
 	sub = submodule
