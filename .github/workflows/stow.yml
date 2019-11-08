@@ -16,8 +16,9 @@ jobs:
         ./INSTALL.sh
         
         cd ..
+        ls -al
         
-        test -d ${HOME}/.local/bin
+        test -d .local/bin
         test -f .editorconfig
         test $(git config --global --get user.name) = ndxbn
         test -f .my.cnf
