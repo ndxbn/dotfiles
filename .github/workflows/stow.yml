@@ -1,0 +1,29 @@
+name: CI
+
+on: [push]
+
+jobs:
+  stow:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install stow
+      run: sudo apt install stow
+    - name: Run Install.sh
+      run: ./INSTALL.sh
+    - name: bin
+      run: test -d ${HOME}/.local/bin
+    - name: editor
+      run: test -f .editorconfig
+    - name: git
+      run: test $(git config --global --get user.name) = ndxbn
+    - name: mysql
+      run: test -f .my.cnf
+    - name: terminfo
+      run: test -f terminfo.src
+    - name: tmux
+      run: test -f .tmux.conf
+    - name: zsh
+      run: test -f .zshrc
