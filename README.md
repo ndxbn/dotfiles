@@ -19,4 +19,3 @@ popd
 
 #
 I usually use [zsh](https://www.zsh.org/).
-
