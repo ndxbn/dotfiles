@@ -9,13 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        path: dotfiles
     - name: Install stow
       run: sudo apt install stow
     - name: test cases
       run: |
-        mkdir dotfiles
-        cp -a ./* dotfiles/
-        
+        ls -alR
         pushd dotfiles
         ./INSTALL.sh
         popd
