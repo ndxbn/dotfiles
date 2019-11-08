@@ -10,20 +10,9 @@ jobs:
     steps:
     - name: Install stow
       run: sudo apt install stow
-    - name: test case
+    - name: Run Install.sh
       run: |
         git clone https://github.com/ndxbn/dotfiles ~/dotfiles
         pushd ~/dotfiles
         ./INSTALL.sh
         popd
-        
-        cd ~
-        ls -al
-        
-        test -d bin
-        test -f .editorconfig
-        test -f .gitcofnig
-        test -f .my.cnf
-        test -f terminfo.src
-        test -f .tmux.conf
-        test -f .zshrc
