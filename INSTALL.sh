@@ -3,8 +3,8 @@ set -eu
 
 # comman exists?
 type stow
-
-stow ./*/
+# shellcheck disable=SC2035
+stow */
 
 # install ssh-config
 ## make .ssh directory if not exist
