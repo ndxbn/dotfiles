@@ -18,7 +18,7 @@ jobs:
         cd ..
         ls -al
         
-        test -d .local/bin
+        test -d bin
         test -f .editorconfig
         test $(git config --global --get user.name) = ndxbn
         test -f .my.cnf
