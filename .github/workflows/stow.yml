@@ -9,16 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      with:
-        path: dotfiles
     - name: Install stow
       run: sudo apt install stow
     - name: test cases
       run: |
-        ls -alR
-        pushd dotfiles
         ./INSTALL.sh
-        popd
+        
+        cd ..
         
         test -d ${HOME}/.local/bin
         test -f .editorconfig
