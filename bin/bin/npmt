@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+docker stop coverage-viewer
+docker rm coverage-viewer
+
+if [[ -d vagrant ]]
+then
+	pushd vagrant
+	docker-compose down
+	docker-compose up -d
+	popd
+
+	sleep 15
+fi
+
+if [[ -d database/migration ]]
+then
+	pushd database/migration
+	npm ci
+	npm run migrate 
+	popd
+fi
+
+npm t
+
+[[ -d coverage/lcov-report ]] || mkdir -p coverage/lcov-report
+docker run --name coverage-viewer -v `pwd`/coverage/lcov-report:/usr/share/nginx/html:ro -p 8080:80 -d nginx:alpine
+

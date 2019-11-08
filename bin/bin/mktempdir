@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+set -eu
+
+# exist `mktemp` command or exit(1)
+type mktemp > /dev/null
+
+readonly TMP_BASE_DIR=${HOME}/.local/tmp
+
+[[ -d ${TMP_BASE_DIR} ]] || mkdir -p ${TMP_BASE_DIR}
+
+mktemp -dp ${TMP_BASE_DIR}
+
