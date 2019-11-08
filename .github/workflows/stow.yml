@@ -11,10 +11,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install stow
       run: sudo apt install stow
-    - name: Run Install.sh
-      run: ./INSTALL.sh
     - name: test cases
       run: |
+        ./INSTALL.sh
+        
         test -d ${HOME}/.local/bin
         test -f .editorconfig
         test $(git config --global --get user.name) = ndxbn
