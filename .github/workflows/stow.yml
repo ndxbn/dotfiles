@@ -8,19 +8,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
     - name: Install stow
       run: sudo apt install stow
-    - name: test cases
+    - name: test case
       run: |
+        git clone https://github.com/ndxbn/dotfiles ~/dotfiles
+        pushd ~/dotfiles
         ./INSTALL.sh
+        popd
         
-        cd ..
         ls -al
         
         test -d bin
         test -f .editorconfig
-        test "$(git config --global --get user.name)" = "ndxbn"
+        test -f .gitcofnig
         test -f .my.cnf
         test -f terminfo.src
         test -f .tmux.conf
