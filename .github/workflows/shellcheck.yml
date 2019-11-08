@@ -3,15 +3,15 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  shellcheck:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: Install shellcheck
       run: apt update && apt install -y shellcheck
-    - name: Run a multi-line script
+    - name: Run shellcheck
       run: |
         cd "$GITHUB_WORKSPACE" || exit 1
         find . -name \*.sh -exec shellcheck {} +
