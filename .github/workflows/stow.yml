@@ -13,17 +13,12 @@ jobs:
       run: sudo apt install stow
     - name: Run Install.sh
       run: ./INSTALL.sh
-    - name: bin
-      run: test -d ${HOME}/.local/bin
-    - name: editor
-      run: test -f .editorconfig
-    - name: git
-      run: test $(git config --global --get user.name) = ndxbn
-    - name: mysql
-      run: test -f .my.cnf
-    - name: terminfo
-      run: test -f terminfo.src
-    - name: tmux
-      run: test -f .tmux.conf
-    - name: zsh
-      run: test -f .zshrc
+    - name: test cases
+      run: |
+        test -d ${HOME}/.local/bin
+        test -f .editorconfig
+        test $(git config --global --get user.name) = ndxbn
+        test -f .my.cnf_
+        test -f terminfo.src
+        test -f .tmux.conf
+        test -f .zshrc
