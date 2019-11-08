@@ -4,7 +4,7 @@ set -eu
 # comman exists?
 type stow
 
-stow ./*/
+stow */
 
 # install ssh-config
 ## make .ssh directory if not exist
