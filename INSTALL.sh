@@ -3,7 +3,7 @@ set -eu
 
 # comman exists?
 type stow
-
+# shellcheck disable=SC2035
 stow */
 
 # install ssh-config
