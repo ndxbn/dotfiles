@@ -20,7 +20,7 @@ jobs:
         
         test -d bin
         test -f .editorconfig
-        test $(git config --global --get user.name) = ndxbn
+        test "$(git config --global --get user.name)" = "ndxbn"
         test -f .my.cnf
         test -f terminfo.src
         test -f .tmux.conf
