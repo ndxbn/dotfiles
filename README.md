@@ -16,3 +16,7 @@ pushd ~/dotfiles
 ./INSTALL.sh
 popd
 ```
+
+#
+I usually use [zsh](https://www.zsh.org/).
+
