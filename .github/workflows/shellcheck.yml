@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: apt update && apt install -y shellcheck
+    - name: Run a multi-line script
+      run: |
+        cd "$GITHUB_WORKSPACE" || exit 1
+        find . -name \*.sh -exec shellcheck {} +
+        find . -name \*.bashrc -exec shellcheck {} +
+        find . -name \*.bash_profile -exec shellcheck {} +
