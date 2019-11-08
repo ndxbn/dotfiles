@@ -12,3 +12,5 @@ alias vim='vi'
 
 # shorthand
 alias http-server='docker run -v `pwd`:/usr/share/nginx/html:ro  -p 8080:80 nginx:alpine'
+alias temp='pushd $(mktempdir)'
+
