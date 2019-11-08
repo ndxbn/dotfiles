@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: apt update && apt install -y shellcheck
+      run: sudo apt update && sudo apt install -y shellcheck
     - name: Run a multi-line script
       run: |
         cd "$GITHUB_WORKSPACE" || exit 1
