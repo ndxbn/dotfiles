@@ -7,4 +7,5 @@ Host ndxbn.tokyo
 
 Host *
   User ndxbn
-
+  ServerAliveInterval 10
+  ServerAliveCountMax 12
