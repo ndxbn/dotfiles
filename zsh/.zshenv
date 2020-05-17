@@ -32,3 +32,5 @@ EDITOR="vi"
 TERMINFO=~/.terminfo
 
 ZPLUG_HOME=~/.zplug
+
+DOCKER_CONTENT_TRUST=1
