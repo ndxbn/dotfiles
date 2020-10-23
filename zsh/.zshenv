@@ -34,3 +34,7 @@ TERMINFO=~/.terminfo
 ZPLUG_HOME=~/.zplug
 
 DOCKER_CONTENT_TRUST=1
+
+LC_ALL="en_US.UTF-8"
+LANG="en_US"
+
