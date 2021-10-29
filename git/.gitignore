@@ -24,7 +24,12 @@ Icon
 .fuse_hidden*
 .Trash-*
 
+# local files
+*.local.*
 
 # Vagrant
 .vagrant/
+
+# Yarn
+.yarn/
 
