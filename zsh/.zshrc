@@ -28,6 +28,7 @@ zplug "popstas/zsh-command-time"
 ## commands
 zplug "github/hub", from:gh-r, as:command
 zplug "stedolan/jq", from:gh-r, as:command
+zplug "b4b4r07/gist", from:gh-r, as:command
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
