@@ -38,3 +38,5 @@ DOCKER_CONTENT_TRUST=1
 LC_ALL="en_US.UTF-8"
 LC_LANG="en_US"
 
+ENV="development"
+NODE_ENV="development"
