@@ -17,6 +17,9 @@
 	logg = log --graph
 	pullupstream = pull upstream master
 	subup = submodule foreach git pull origin master
+	sw = switch
+	swc = switch -c
+
 [merge]
 	ff = false
 [pull]
