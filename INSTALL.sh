@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-# comman exists?
+# command exists?
 type stow
 # shellcheck disable=SC2035
 stow */
