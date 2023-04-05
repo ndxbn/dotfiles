@@ -15,10 +15,11 @@
 [alias]
 	sub = submodule
 	logg = log --graph
+	logog = log --oneline --graph
 	pullupstream = pull upstream master
-	subup = submodule foreach git pull origin master
+	subpull = submodule foreach git pull origin master
 	sw = switch
-	swc = switch -c
+	cc = switch -c
 
 [merge]
 	ff = false
