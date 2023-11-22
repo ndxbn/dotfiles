@@ -3,12 +3,18 @@ bindkey -e
 
 # [Ctrl-u]
 bindkey "^U" backward-kill-line
-## ${terminfo[khome]} is "^[0H", and it makes bug
 # [Home]
+## ${terminfo[khome]} is "^[0H", and it makes bug
+## WSL
 bindkey "^[[H" beginning-of-line
-## ${terminfo[kend]} is "^[0F", and it makes bug
+## Tera Term
+bindkey "^[[1~" beginning-of-line
 # [End]
-bindkey  "^[[F"   end-of-line
+## ${terminfo[kend]} is "^[0F", and it makes bug
+## WSL
+bindkey "^[[F" end-of-line
+## Tera Term
+bindkey "^[[4~" end-of-line
 
 # [Shift-Tab]
 if [[ -n "${terminfo[kcbt]}" ]]; then
