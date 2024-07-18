@@ -5,6 +5,13 @@ setopt no_global_rcs
 typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 ##
 if [ "Darwin" = $(uname -s) ]; then
+  ## homebrew
+  HOMEBREW_PREFIX="/opt/homebrew";
+  HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+  HOMEBREW_REPOSITORY="/opt/homebrew";
+  PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+  MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+  INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
   ## coreutils
   PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
   MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
