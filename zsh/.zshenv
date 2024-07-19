@@ -13,17 +13,15 @@ if [ "Darwin" = $(uname -s) ]; then
   MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
   INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
   ## coreutils
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
   ## findutils
-  PATH="/usr/local/opt/findutils/libexec/gnubin:${PATH}"
-  MANPATH="/usr/local/opt/findutils/libexec/gnuman:${MANPATH}"
+  PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
   ## gnu-sed
-  PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
-  MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:${MANPATH}"
+  PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
   ## gettext
-  PATH="/usr/local/opt/gettext/bin:$PATH"
-  MANPATH="/usr/local/opt/gettext/share/man:${MANPATH}"
+
+  ## podman
+  PATH="/opt/podman/bin/:${PATH}"
 fi
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"

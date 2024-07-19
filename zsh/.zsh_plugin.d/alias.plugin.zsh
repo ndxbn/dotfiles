@@ -14,4 +14,4 @@ alias vim='vi'
 alias http-server='docker run -v `pwd`:/usr/share/nginx/html:ro  -p 8080:80 nginx:alpine'
 alias temp='pushd $(TMPDIR=${HOME}/.local/tmp mktemp -d)'
 alias tempdir='pushd $(TMPDIR=${HOME}/.local/tmp mktemp -d)'
-
+alias pd='podman'
