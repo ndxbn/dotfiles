@@ -12,15 +12,16 @@ if [ "Darwin" = $(uname -s) ]; then
   PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
   MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
   INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  ## coreutils
+  FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+  ## gnubin
+  ### coreutils
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-  ## findutils
+  ### findutils
   PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
-  ## gnu-sed
+  ### gnu-sed
   PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
   ## gettext
-
+  PATH="/opt/homebrew/opt/gettext/bin:$PATH"
   ## podman
   PATH="/opt/podman/bin/:${PATH}"
 fi
