@@ -9,6 +9,9 @@ HISTFILE=~/.zsh_history
 # zplug
 source ~/.zplug/init.zsh
 
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
 ## loader
 zplug "~/.zsh_plugin.d", from:local
 zplug "~/.zsh_theme.d", from:local, as:theme
@@ -18,6 +21,7 @@ zplug "chrissicool/zsh-256color"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 
 ## plugins
