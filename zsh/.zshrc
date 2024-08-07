@@ -38,3 +38,10 @@ fi
 
 zplug load --verbose
 
+
+# bun completions
+[ -s "/Users/kota_suzuki/.bun/_bun" ] && source "/Users/kota_suzuki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
