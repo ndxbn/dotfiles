@@ -34,11 +34,11 @@ PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
 
 #
-EDITOR="vi"
+EDITOR="vim"
+TERMINFO="${HOME}/.terminfo"
+PREFIX="${HOME}/.local"
 
-TERMINFO=~/.terminfo
-
-ZPLUG_HOME=~/.zplug
+ZPLUG_HOME="${HOME}/.zplug"
 
 DOCKER_CONTENT_TRUST=1
 
