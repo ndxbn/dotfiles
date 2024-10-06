@@ -15,7 +15,8 @@
 [alias]
 	sub = submodule
 	logg = log --graph
-	logog = log --oneline --graph
+	logl = log --oneline
+	#  ^ (log l)iner
 	pullupstream = pull upstream master
 	subpull = submodule foreach git pull origin master
 	sw = switch
