@@ -6,13 +6,13 @@ typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 ##
 if [ "Darwin" = $(uname -s) ]; then
   ## homebrew
-  HOMEBREW_PREFIX="/opt/homebrew";
-  HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-  HOMEBREW_REPOSITORY="/opt/homebrew";
+  export HOMEBREW_PREFIX="/opt/homebrew";
+  export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+  export HOMEBREW_REPOSITORY="/opt/homebrew";
   PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-  MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-  INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-  FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+  export FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
   ## gnubin
   ### coreutils
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
@@ -32,18 +32,20 @@ PATH="${HOME}/.anyenv/bin:${PATH}"
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
+export PATH="${PATH}"
 
 #
-EDITOR="vim"
-TERMINFO="${HOME}/.terminfo"
-PREFIX="${HOME}/.local"
+export EDITOR="vim"
+export TERMINFO="${HOME}/.terminfo"
+export PREFIX="${HOME}/.local"
+export TMPDIR="${HOME}/.local/tmp"
 
-ZPLUG_HOME="${HOME}/.zplug"
+export ZPLUG_HOME="${HOME}/.zplug"
 
-DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=1
 
-LC_ALL="en_US.UTF-8"
-LC_LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+export LC_LANG="en_US"
 
-ENV="development"
-NODE_ENV="development"
+export ENV="development"
+export NODE_ENV="development"
