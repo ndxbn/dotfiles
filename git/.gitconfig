@@ -31,7 +31,7 @@
 	default = simple
 
 [remote "origin"]
-	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
+#	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
 
 [filter "lfs"]
 	process = git-lfs filter-process
