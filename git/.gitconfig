@@ -10,17 +10,14 @@
 	autocrlf = false
 	excludesfile = ~/.gitignore
 	longpaths = true
-	editor = vi
+	editor = vim
 [init]
 [alias]
-	sub = submodule
 	logg = log --graph
 	logl = log --oneline
 	#  ^ (log l)iner
 	pullupstream = pull upstream master
 	subpull = submodule foreach git pull origin master
-	sw = switch
-	cc = switch -c
 
 [merge]
 	ff = false
@@ -28,7 +25,7 @@
 	ff = true
 [push]
 	followTags = true
-	default = simple
+	default = current
 
 [remote "origin"]
 #	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
