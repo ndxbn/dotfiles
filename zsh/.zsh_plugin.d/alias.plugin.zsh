@@ -16,7 +16,9 @@ alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 
 # GitHub tools
 ## "get repo" short name
-alias gepo='gh repo list --json name --jq ".[].name" --no-archived | peco | xargs ghq get -p'
+alias gepo='gh repo list --json nameWithOwner --jq ".[].nameWithOwner" --no-archived | peco | xargs ghq get -p'
+alias gepoo='gh repo list ndxbn-tokyo --json nameWithOwner --jq ".[].nameWithOwner" --no-archived | peco | xargs ghq get -p'
+alias gepoa='gh repo list akashic-system --json nameWithOwner --jq ".[].nameWithOwner" --no-archived | peco | xargs ghq get -p'
 ## "cd repo" short name
 alias cdpo='pushd "$(ghq root)/$(ghq list | peco)"'
 
