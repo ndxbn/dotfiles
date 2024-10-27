@@ -15,7 +15,8 @@ alias http-server='docker run -v `pwd`:/usr/share/nginx/html:ro  -p 8080:80 ngin
 alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 
 # GitHub tools
-alias myrepo='gh repo list --json name --jq ".[].name" --no-archived | peco | xargs ghq get -p'
+## "get repo" short name
+alias gepo='gh repo list --json name --jq ".[].name" --no-archived | peco | xargs ghq get -p'
 ## "cd repo" short name
 alias cdpo='pushd "$(ghq root)/$(ghq list | peco)"'
 
