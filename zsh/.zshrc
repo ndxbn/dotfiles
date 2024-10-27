@@ -29,19 +29,10 @@ zplug "Tarrasch/zsh-bd"
 zplug "arzzen/calc.plugin.zsh"
 zplug "popstas/zsh-command-time"
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
+zplug install
 zplug load --verbose
 
 
 # bun completions
 [ -s "/Users/kota_suzuki/.bun/_bun" ] && source "/Users/kota_suzuki/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
