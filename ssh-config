@@ -1,10 +1,5 @@
 Include config-local
 
-Host ndxbn.tokyo
-  HostName 39.111.244.132
-  User ndxbn
-  Port 2222
-
 Host *
   User ndxbn
   ServerAliveInterval 10
