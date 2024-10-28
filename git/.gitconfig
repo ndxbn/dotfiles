@@ -7,7 +7,7 @@
 	name = ndxbn
 	email = sitri.ndxbn@gmail.com
 [core]
-	autocrlf = false
+	autocrlf = input
 	excludesfile = ~/.gitignore
 	longpaths = true
 	editor = vim
