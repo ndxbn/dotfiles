@@ -26,12 +26,8 @@ if [ "Darwin" = $(uname -s) ]; then
   PATH="/opt/podman/bin/:${PATH}"
 fi
 
-## Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 ## user land
-PATH="${BUN_INSTALL}/bin:${HOME}/.local/bin:${HOME}/bin:${HOME}/.brew/bin:${PATH}"
+PATH="${HOME}/.local/bin:${HOME}/bin:${HOME}/.brew/bin:${PATH}"
 ### anyenv
 PATH="${HOME}/.anyenv/bin:${PATH}"
 ## under current directory
