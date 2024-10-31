@@ -27,13 +27,14 @@
 	followTags = true
 	default = current
 
-[remote "origin"]
-#	fetch = +refs/pull/*/head:refs/remotes/zz_origin/pr/*
-
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+[diff "lockb"]
+	textconv = bun
+	binary = true
 [ghq]
 	root = ~/repos
