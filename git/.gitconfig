@@ -5,7 +5,7 @@
 
 [user]
 	name = Sitri Kamishirasawa
-	email = sitri.ndxbn@gmail.com
+	email = wc348nka@gmail.com
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
@@ -38,3 +38,4 @@
 	binary = true
 [ghq]
 	root = ~/repos
+
