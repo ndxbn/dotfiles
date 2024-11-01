@@ -62,6 +62,7 @@ _ghfork() {
 	gh repo fork ${1} --clone=false
 	local fork_repo_name="ndxbn/$(echo ${1} | awk -F/ '{print $2}')"
 	ghg ${fork_repo_name}
+	git remote add upstream https://github.com/${1}.git
 }
 alias ghfork="_ghfork"
 
