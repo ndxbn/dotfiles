@@ -18,6 +18,9 @@ alias venv='python3 -m venv venv && source ./venv/bin/activate'
 ## you can get from pP that which venv is activated.
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 
+# AWS
+alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof}; done'
+
 # GitHub tools
 ## lsgh
 alias ghls="gh repo list --json nameWithOwner --jq '.[].nameWithOwner' --no-archived" 
