@@ -14,13 +14,11 @@
 [init]
 [alias]
 	logg = log --graph
-	logl = log --oneline
-	#  ^ (log l)iner
-	pullupstream = pull upstream master
+	log1 = log --oneline
+	logg1 = log --graph --oneline
+	pullupstream = pull upstream main
 	subpull = submodule foreach git pull origin master
 
-[merge]
-	ff = false
 [pull]
 	ff = true
 [push]
