@@ -17,7 +17,6 @@
 	log1 = log --oneline
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
-	subpull = submodule foreach git pull origin master
 
 [pull]
 	ff = true
