@@ -7,7 +7,7 @@
 	name = Sitri Kamishirasawa
 	email = wc348nka@gmail.com
 [core]
-	autocrlf = input
+	autocrlf = false
 	excludesfile = ~/.gitignore
 	longpaths = true
 	editor = vim
