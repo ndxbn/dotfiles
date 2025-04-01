@@ -25,7 +25,6 @@ zplug "plugins/httpie", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 
 ## plugins
-zplug "Tarrasch/zsh-bd"
 zplug "arzzen/calc.plugin.zsh"
 zplug "popstas/zsh-command-time"
 
