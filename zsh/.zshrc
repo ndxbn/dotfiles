@@ -29,7 +29,7 @@ zplug "arzzen/calc.plugin.zsh"
 zplug "popstas/zsh-command-time"
 
 zplug install
-zplug load --verbose
+zplug load
 
 
 # bun completions

@@ -28,6 +28,8 @@ fi
 
 ## user land
 PATH="${HOME}/.local/bin:${HOME}/bin:${HOME}/.brew/bin:${PATH}"
+### To resolve path requires some commands execution under HOME bin PATHs
+PATH="$(bun pm bin -g 2>/dev/null):${PATH}"
 ### anyenv
 PATH="${HOME}/.anyenv/bin:${PATH}"
 ## under current directory
