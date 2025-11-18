@@ -6,6 +6,7 @@
 [user]
 	name = Sitri Kamishirasawa
 	email = wc348nka@gmail.com
+	signingkey = /home/ndxbn/.ssh/id_ed25519.pub
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
@@ -36,3 +37,7 @@
 [ghq]
 	root = ~/repos
 
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
