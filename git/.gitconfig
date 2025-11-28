@@ -19,6 +19,9 @@
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
 
+[log]
+	showSignature = true
+
 [pull]
 	ff = true
 [push]
