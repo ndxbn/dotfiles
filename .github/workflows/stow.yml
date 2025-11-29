@@ -5,6 +5,8 @@ on: [push]
 jobs:
   stow:
     runs-on: ubuntu-latest
+    env:
+      HOME: ${{ GITHUB_WORKSPACE }}
       
     steps:
     - uses: actions/checkout@v6
