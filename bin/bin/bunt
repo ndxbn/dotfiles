@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-docker stop coverage-viewer
-docker rm coverage-viewer
-
-bun test
-
-[[ -d coverage/lcov-report ]] || mkdir -p coverage/lcov-report
-docker run --name coverage-viewer -v `pwd`/coverage/lcov-report:/usr/share/nginx/html:ro -p 8080:80 -d nginx:alpine
-
