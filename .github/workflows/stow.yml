@@ -12,13 +12,9 @@ jobs:
         path: dotfiles
     - name: Install stow
       run: sudo apt install stow
-    - name: display envs
-      run: |
-        echo HOME is ${HOME}
-        echo GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}
-        echo pwd is $(pwd)
     - name: Run Install.sh
       run: |
         pushd "${GITHUB_WORKSPACE}/dotfiles"
+        echo "-vv" >> .stowrc
         HOME="${GITHUB_WORKSPACE}" ./INSTALL.sh
         popd
