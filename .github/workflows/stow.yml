@@ -5,19 +5,21 @@ on: [push]
 jobs:
   stow:
     runs-on: ubuntu-latest
-    env:
-      HOME: ${{ GITHUB_WORKSPACE }}
       
     steps:
     - uses: actions/checkout@v6
     - name: Install stow
       run: sudo apt install stow
     - name: display envs
+      env:
+        HOME: ${{ GITHUB_WORKSPACE }}
       run: |
         echo HOME is ${HOME}
         echo GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}
         echo pwd is $(pwd)
     - name: Run Install.sh
+      env:
+        HOME: ${{ GITHUB_WORKSPACE }}
       run: |
         git clone https://github.com/ndxbn/dotfiles ~/dotfiles
         pushd ~/dotfiles
