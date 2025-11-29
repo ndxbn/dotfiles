@@ -15,5 +15,10 @@ jobs:
       run: |
         cd "$GITHUB_WORKSPACE" || exit 1
         find . -name \*.sh -exec shellcheck {} +
+        find . -name \*.bash -exec shellcheck {} +
+        find . -name \*.zsh -exec shellcheck {} +
         find . -name \*.bashrc -exec shellcheck {} +
         find . -name \*.bash_profile -exec shellcheck {} +
+        find . -name \*.zshenv -exec shellcheck {} +
+        find . -name \*.zprofile -exec shellcheck {} +
+        find . -name \*.zshrc -exec shellcheck {} +
