@@ -21,7 +21,8 @@
 
 [log]
 	showSignature = true
-
+[merge]
+	ff = false
 [pull]
 	ff = true
 [push]
