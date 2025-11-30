@@ -1,54 +1,53 @@
 setopt no_global_rcs
 
+# Filesystem Hierarchy
+## Load XDG Definitions (Single Source of Truth)
+if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
+    source "$HOME/.config/shell/xdg.env.sh"
+fi
+## Always use Local Workspaces
+export PREFIX="${HOME}/.local"
+export TMPDIR="${HOME}/.local/tmp"
+
+# Homebrew Config
+# I use it for Userland Package Manager also on Linux
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+export FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+
 # PATH, MANPATH
-## system wide
 typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-##
+PATH="${HOME}/.brew/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+## use GNU on BSD
 if [ "Darwin" = $(uname -s) ]; then
-  ## homebrew
-  export HOMEBREW_PREFIX="/opt/homebrew";
-  export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-  export HOMEBREW_REPOSITORY="/opt/homebrew";
-  PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-  export FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
   ## gnubin
-  ### coreutils
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-  ### findutils
   PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
-  ### gnu-sed
   PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-  ## gettext
   PATH="/opt/homebrew/opt/gettext/bin:$PATH"
-  ## podman
+  ## I use podman on Mac
   PATH="/opt/podman/bin/:${PATH}"
 fi
-
-## user land
-PATH="${HOME}/.local/bin:${HOME}/bin:${HOME}/.brew/bin:${PATH}"
-### To resolve path requires some commands execution under HOME bin PATHs
-PATH="$(bun pm bin -g 2>/dev/null):${PATH}"
-### anyenv
-PATH="${HOME}/.anyenv/bin:${PATH}"
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
 PATH="./vendor/bin:${PATH}"
 export PATH="${PATH}"
 
-#
+# Editor, Terminal
 export EDITOR="vim"
 export TERMINFO="${HOME}/.terminfo"
-export PREFIX="${HOME}/.local"
-export TMPDIR="${HOME}/.local/tmp"
 
-export ZPLUG_HOME="${HOME}/.zplug"
-
+# Security
 export DOCKER_CONTENT_TRUST=1
 
+# Languages
 export LC_ALL="en_US.UTF-8"
 export LC_LANG="en_US"
 
+# ENVs for Runtimes
 export ENV="development"
 export NODE_ENV="development"
+
