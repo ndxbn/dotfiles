@@ -8,21 +8,31 @@ fi
 ## Always use Local Workspaces
 export PREFIX="${HOME}/.local"
 export TMPDIR="${HOME}/.local/tmp"
+mkdir -p ${TMPDIR}
 
-# Homebrew Config
-# I use it for Userland Package Manager also on Linux
-export HOMEBREW_PREFIX="/opt/homebrew"
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-export HOMEBREW_REPOSITORY="/opt/homebrew"
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
-export FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
-
-# PATH, MANPATH
+# PATHs
+## initialize PATH
 typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-PATH="${HOME}/.brew/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+## Homebrew PATHs with `eval $(brew shellenv)`
+typeset _brew_prefix=""
+typeset _uname_system="$(uname -s)"
+typeset _uname_machine="$(uname -m)"
+if [[ "$_uname_system" == "Linux" ]]; then
+    _brew_prefix="/home/linuxbrew/.linuxbrew"
+elif [[ "$_uname_system" == "Darwin" ]]; then
+    if [[ "$_uname_machine" == "arm64" ]]; then
+        _brew_prefix="/opt/homebrew"
+    else
+        _brew_prefix="/usr/local"
+    fi
+fi
+if [[ -n "$_brew_prefix" && -x "${_brew_prefix}/bin/brew" ]]; then
+    eval "$("${_brew_prefix}/bin/brew" shellenv)"
+    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+fi
+unset _brew_prefix _uname_machine _uname_system
 ## use GNU on BSD
-if [ "Darwin" = $(uname -s) ]; then
+if [[ "Darwin" = "$(uname -s)" ]]; then
   ## gnubin
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
   PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"

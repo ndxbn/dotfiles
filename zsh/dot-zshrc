@@ -1,8 +1,7 @@
-# FAILSAFEs
-#if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
-#    echo "You MUST load XDG Envs in .zshenv"
-#    source "$HOME/.config/shell/xdg.env.sh"
-#fi
+# FAILSAFE
+if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
+    source "$HOME/.config/shell/xdg.env.sh"
+fi
 
 ## History Settings
 HISTSIZE=1000000000
@@ -25,7 +24,7 @@ function zload() {
     # you must add fpath before `compinit`
     fpath=("${plugin_dir}" $fpath)
 
-    # if plugin has any constructore script, include it.
+    # if plugin has any constructore script, import it.
     if [[ -f "$plugin_dir/${plugin_name}.plugin.zsh" ]]; then
         source "$plugin_dir/${plugin_name}.plugin.zsh"
     elif [[ -f "$plugin_dir/${plugin_name}.zsh" ]]; then
