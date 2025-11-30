@@ -12,7 +12,7 @@ type stow
 . "./shell/dot-config/shell/xdg.env.sh"
 ## "xdg.env.sh" MUST export all of these env-vars.
 ##   don't use default assignment syntax.
-mkdir -p "${XDG_CONFIG_HOME}" \
+mkdir -v -p "${XDG_CONFIG_HOME}" \
 	"${XDG_DATA_HOME}" \
 	"${XDG_STATE_HOME}" \
 	"${XDG_CACHE_HOME}" \
@@ -33,7 +33,7 @@ USER_DIRS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs"
 : "${XDG_MUSIC_DIR:=$HOME/Music}"
 : "${XDG_PICTURES_DIR:=$HOME/Pictures}"
 : "${XDG_VIDEOS_DIR:=$HOME/Videos}"
-mkdir -p \
+mkdir -v -p \
 	"$XDG_DESKTOP_DIR" \
 	"$XDG_DOWNLOAD_DIR" \
 	"$XDG_TEMPLATES_DIR" \
@@ -42,6 +42,7 @@ mkdir -p \
 	"$XDG_MUSIC_DIR" \
 	"$XDG_PICTURES_DIR" \
 	"$XDG_VIDEOS_DIR"
+ls -al ../
 
 # stow
 # shellcheck disable=SC2035
