@@ -12,11 +12,12 @@ type stow
 . "./shell/dot-config/shell/xdg.env.sh"
 ## "xdg.env.sh" MUST export all of these env-vars.
 ##   don't use default assignment syntax.
-mkdir -v -p "${XDG_CONFIG_HOME}" \
+mkdir -v -p \
 	"${XDG_DATA_HOME}" \
+	"${XDG_CONFIG_HOME}" \
 	"${XDG_STATE_HOME}" \
-	"${XDG_CACHE_HOME}" \
-	"${HOME}/.local/bin"
+	"${HOME}/.local/bin" \
+	"${XDG_CACHE_HOME}"
 
 ## XDG User Directories
 ## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
