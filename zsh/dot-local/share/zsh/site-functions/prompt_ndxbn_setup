@@ -1,4 +1,3 @@
-
 prompt_ndxbn_setup() {
 	setopt promptsubst
 
