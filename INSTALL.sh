@@ -19,7 +19,9 @@ mkdir -v -p \
 	"${HOME}/.local/bin" \
 	"${XDG_CACHE_HOME}"
 
-print -P ${XDG_CONFIG_HOME}
+echo "###"
+echo  "${XDG_CONFIG_HOME}"
+echo "###"
 
 ## XDG User Directories
 ## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
