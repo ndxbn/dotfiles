@@ -19,6 +19,8 @@ mkdir -v -p \
 	"${HOME}/.local/bin" \
 	"${XDG_CACHE_HOME}"
 
+print -P ${XDG_CONFIG_HOME}
+
 ## XDG User Directories
 ## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
 ## "usr-dirs.dirs" file might exist if OS have XDG template in home directory skelton.
