@@ -1,0 +1,52 @@
+
+prompt_ndxbn_setup() {
+	setopt promptsubst
+
+	autoload -Uz vcs_info
+	autoload -Uz add-zsh-hook
+
+	zstyle ':vcs_info:*' formats '%b'
+	zstyle ':vcs_info:*' actionformats '%b|%a'
+
+	add-zsh-hook precmd prompt_ndxbn_precmd
+}
+
+prompt_ndxbn_precmd() {
+	vcs_info
+
+	local git_status
+	git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
+
+	if [[ -n "$git_status" ]]; then
+		# Dirty: Red + ! + branch
+		local git_branch='%F{red}!${vcs_info_msg_0_}'
+	else
+		# Clean: Green + branch
+		local git_branch='%F{green}${vcs_info_msg_0_}'
+	fi
+
+	if [[ -n "${vcs_info_msg_0_}" ]]; then
+		RPROMPT="${git_branch}%f"
+	else
+		RPROMPT=""
+	fi
+
+	# PROMPT
+	# authority とかの用語は、 RFC3986 の ABNF を参照
+	## PROMPT = line1 LF line2
+	## line1 = URI-reference 的なもの
+	##   ; authority='%n%F{cyan}@%f%M'
+	##     ; "@" のみ色変え
+	##   ; path_abempty='%F{cyan}%d%f'
+	##   ; authority 部分と path 部分は、別の色にする
+	## line2 = "%#" SP ; ( is_root ? "#" : "%" ) + space
+	##   ; %# は exit code で red bold 
+	local line1='%n%F{cyan}@%f%M%F{cyan}%d%f'
+	local line2='%(?.%# .%B%F{red}%#%f%b )'
+
+	PROMPT="${line1}
+${line2}"
+}
+
+prompt_ndxbn_setup "$@"
+
