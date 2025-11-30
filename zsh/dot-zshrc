@@ -31,7 +31,3 @@ zplug "popstas/zsh-command-time"
 zplug install
 zplug load
 
-
-# bun completions
-[ -s "/Users/kota_suzuki/.bun/_bun" ] && source "/Users/kota_suzuki/.bun/_bun"
-
