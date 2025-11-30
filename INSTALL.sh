@@ -10,7 +10,8 @@ type stow
 ## XDG Base Directory
 ## https://specifications.freedesktop.org/basedir/latest
 . "./shell/dot-config/shell/xdg.env.sh"
-## no default syntax. "xdg.env.sh" MUST export all of these env-vars.
+## "xdg.env.sh" MUST export all of these env-vars.
+##   don't use default assignment syntax.
 mkdir -p "${XDG_CONFIG_HOME}" \
 	"${XDG_DATA_HOME}" \
 	"${XDG_STATE_HOME}" \

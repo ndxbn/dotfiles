@@ -1,33 +1,62 @@
-umask 022
+# FAILSAFE
+if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
+    source "$HOME/.config/shell/xdg.env.sh"
+fi
 
-# zsh options
-## history
+## History Settings
 HISTSIZE=1000000000
 SAVEHIST=1000000000
-HISTFILE=~/.zsh_history
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh_history"
+[[ -d "$(dirname "$HISTFILE")" ]] || mkdir -p "$(dirname "$HISTFILE")"
 
-# zplug
-source ~/.zplug/init.zsh
+# My Plugin Manager
+_ZPLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
+function zload() {
+    local repo="$1"
+    local plugin_name="${repo:t}"
+    local plugin_dir="${_ZPLUGIN_DIR}/${plugin_name}"
 
-autoload bashcompinit && bashcompinit
+    # download plugin package
+    if [[ ! -d "$plugin_dir" ]]; then
+        git clone --depth 1 --recursive "https://github.com/${repo}.git" "$plugin_dir"
+    fi
+
+    # you must add fpath before `compinit`
+    fpath=("${plugin_dir}" $fpath)
+
+    # if plugin has any constructore script, import it.
+    if [[ -f "$plugin_dir/${plugin_name}.plugin.zsh" ]]; then
+        source "$plugin_dir/${plugin_name}.plugin.zsh"
+    elif [[ -f "$plugin_dir/${plugin_name}.zsh" ]]; then
+        source "$plugin_dir/${plugin_name}.zsh"
+    fi
+}
+function zupdate() {
+    find "$_ZPLUGIN_DIR" -mindepth 1 -maxdepth 1 -type d | while read -r dir; do
+        git -C "$dir" pull
+    done
+}
+
+# Completions
+zload "zsh-users/zsh-completions"
+fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions" $fpath)
 autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
 
-## loader
-zplug "~/.zsh_plugin.d", from:local
-zplug "~/.zsh_theme.d", from:local, as:theme
+# Prompt Theme
+autoload -Uz promptinit && promptinit
+prompt ndxbn
 
-## suggestions / completions
-zplug "chrissicool/zsh-256color"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "plugins/httpie", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
+# Local Plugins
+for config in "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/"*.zsh; do
+    source "$config"
+done
 
-## plugins
-zplug "arzzen/calc.plugin.zsh"
-zplug "popstas/zsh-command-time"
+# External Plugins
+zload "zsh-users/zsh-syntax-highlighting"
+zload "zsh-users/zsh-autosuggestions"
+zload "chrissicool/zsh-256color"
 
-zplug install
-zplug load
+zload "arzzen/calc.plugin.zsh"
+zload "popstas/zsh-command-time"
 
