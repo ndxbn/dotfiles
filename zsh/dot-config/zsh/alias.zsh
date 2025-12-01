@@ -17,6 +17,7 @@ alias venv='python3 -m venv venv && source ./venv/bin/activate'
 # print something
 ## you can get from pP that which venv is activated.
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
+alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 
 # AWS
 alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
