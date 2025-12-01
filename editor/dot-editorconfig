@@ -30,5 +30,6 @@ trim_trailing_whitespace = false
 [*.php]
 # nothing
 
-[*.{sh,bash,zsh}]
+[*.{sh,bash,zsh},**/site-functions/*]
 # nothing
+

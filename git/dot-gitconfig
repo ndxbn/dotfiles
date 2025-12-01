@@ -12,6 +12,7 @@
 	excludesfile = ~/.gitignore
 	longpaths = true
 	editor = vim
+	fsmonitor = true
 [init]
 [alias]
 	logg = log --graph
