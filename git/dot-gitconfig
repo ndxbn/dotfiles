@@ -12,7 +12,8 @@
 	excludesfile = ~/.gitignore
 	longpaths = true
 	editor = vim
-	fsmonitor = true
+	# `ctrl + c` on zsh main thread, it kills fsm-daemon.
+	fsmonitor = false
 [init]
 [alias]
 	logg = log --graph
