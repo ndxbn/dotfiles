@@ -10,25 +10,25 @@ prompt_ndxbn_setup() {
 	add-zsh-hook precmd prompt_ndxbn_precmd
 }
 
+_is_dirty() {
+  ! git diff --no-ext-diff --cached --quiet --exit-code ||
+  ! git diff --no-ext-diff --quiet --exit-code ||
+  # `ls-files` also fast than `status`
+  [ -n "$(git ls-files --others --exclude-standard | head -n1)" ]
+}
+
 prompt_ndxbn_precmd() {
+	# Right PROMPT
 	vcs_info
-
-	local git_status
-	git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
-
-	if [[ -n "$git_status" ]]; then
-		# Dirty: Red + ! + branch
-		local git_branch="%F{red}!${vcs_info_msg_0_}%f"
-	else
-		# Clean: Green + branch
-		local git_branch="%F{green}${vcs_info_msg_0_}%f"
-	fi
-
+	local rline1=""
 	if [[ -n "${vcs_info_msg_0_}" ]]; then
-		RPROMPT="${git_branch}%f"
-	else
-		RPROMPT=""
+		rline1="%F{green}${vcs_info_msg_0_}%f"
+		if _is_dirty; then
+			rline1="%F{red}!${vcs_info_msg_0_}%f"
+		fi
 	fi
+	
+	RPROMPT="${rline1}"
 
 	# PROMPT
 	# authority とかの用語は、 RFC3986 の ABNF を参照
