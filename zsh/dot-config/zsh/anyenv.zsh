@@ -1,2 +1,2 @@
-eval "$(anyenv init - zsh)"
+#eval "$(anyenv init - zsh)"
 
