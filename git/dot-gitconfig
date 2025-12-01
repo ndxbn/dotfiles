@@ -20,7 +20,8 @@
 	log1 = log --oneline
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
-
+	sw = switch -c
+	st = status --ignore-submodules=all
 [log]
 	showSignature = true
 [merge]
