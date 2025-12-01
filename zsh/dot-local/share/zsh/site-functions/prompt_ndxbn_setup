@@ -18,10 +18,10 @@ prompt_ndxbn_precmd() {
 
 	if [[ -n "$git_status" ]]; then
 		# Dirty: Red + ! + branch
-		local git_branch='%F{red}!${vcs_info_msg_0_}'
+		local git_branch="%F{red}!${vcs_info_msg_0_}%f"
 	else
 		# Clean: Green + branch
-		local git_branch='%F{green}${vcs_info_msg_0_}'
+		local git_branch="%F{green}${vcs_info_msg_0_}%f"
 	fi
 
 	if [[ -n "${vcs_info_msg_0_}" ]]; then

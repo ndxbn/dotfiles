@@ -4,7 +4,7 @@ set -eu
 # valid dotfiles directory path?
 [[ "$(cd "$(dirname "$0")" && pwd)" == "$HOME/dotfiles" ]] || exit 78
 # command exists?
-type stow
+type stow > /dev/null
 
 # Ensure Filesystem Hierarensure
 ## XDG Base Directory
