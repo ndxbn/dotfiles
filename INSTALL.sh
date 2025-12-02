@@ -19,10 +19,6 @@ mkdir -v -p \
 	"${HOME}/.local/bin" \
 	"${XDG_CACHE_HOME}"
 
-echo "###"
-echo  "${XDG_CONFIG_HOME}"
-echo "###"
-
 ## XDG User Directories
 ## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
 ## "usr-dirs.dirs" file might exist if OS have XDG template in home directory skelton.
@@ -47,7 +43,6 @@ mkdir -v -p \
 	"$XDG_MUSIC_DIR" \
 	"$XDG_PICTURES_DIR" \
 	"$XDG_VIDEOS_DIR"
-ls -al ../
 
 # stow
 # shellcheck disable=SC2035
