@@ -19,6 +19,11 @@ alias venv='python3 -m venv venv && source ./venv/bin/activate'
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 
+# util
+alias now='date -Is'
+alias zprofstart='zmodload zsh/zprof'
+alias zprofend='zmodload -u zsh/zprof'
+
 # AWS
 alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
 
