@@ -11,6 +11,7 @@ HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh_history"
 
 # My Plugin Manager
 _ZPLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
+mkdir -p ${_ZPLUGIN_DIR}
 function zload() {
     local repo="$1"
     local plugin_name="${repo:t}"
@@ -25,9 +26,11 @@ function zload() {
     fpath=("${plugin_dir}" $fpath)
 
     # if plugin has any constructor script, import it.
-    if [[ -f "$plugin_dir/${plugin_name}.plugin.zsh" ]]; then
+	if [[ -f "${plugin_dir}/${plugin_name}" ]]; then # e.g. "arzzen/calc.plugin.zsh"
+		source "${plugin_dir}/${plugin_name}"
+    elif [[ -f "$plugin_dir/${plugin_name}.plugin.zsh" ]]; then # e.g. "chrissicool/zsh-256color"
         source "$plugin_dir/${plugin_name}.plugin.zsh"
-    elif [[ -f "$plugin_dir/${plugin_name}.zsh" ]]; then
+    elif [[ -f "$plugin_dir/${plugin_name}.zsh" ]]; then # legacy package
         source "$plugin_dir/${plugin_name}.zsh"
     fi
 }
