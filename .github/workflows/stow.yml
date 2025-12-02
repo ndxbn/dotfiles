@@ -13,7 +13,7 @@ jobs:
     - name: Run Install.sh
       run: |
         mkdir -p "${GITHUB_WORKSPACE}/.home"
-        echo "-vv " >> .stowrc
-        echo "-t ${GITHUB_WORKSPACE}/.home " >> .stowrc
+        rm .stowrc
+        cp .github/stowrc .stowrc
         HOME="${GITHUB_WORKSPACE}/.home" ./INSTALL.sh
 
