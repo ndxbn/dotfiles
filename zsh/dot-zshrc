@@ -24,7 +24,7 @@ function zload() {
     # you must add fpath before `compinit`
     fpath=("${plugin_dir}" $fpath)
 
-    # if plugin has any constructore script, import it.
+    # if plugin has any constructor script, import it.
     if [[ -f "$plugin_dir/${plugin_name}.plugin.zsh" ]]; then
         source "$plugin_dir/${plugin_name}.plugin.zsh"
     elif [[ -f "$plugin_dir/${plugin_name}.zsh" ]]; then
