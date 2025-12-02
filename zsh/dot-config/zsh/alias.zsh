@@ -29,12 +29,11 @@ alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws 
 
 # GitHub tools
 ## lsgh
-alias ghls="gh repo list --json nameWithOwner --jq '.[].nameWithOwner' --no-archived" 
+alias ghls="gh repo list --json nameWithOwner --jq '.[].nameWithOwner' --no-archived"
 ## cdgh
 ### reason to NOT "ghcd", this command may not use GitHub API if not need.
-_cdgh () {
-	if [[ -z ${1} ]]
-	then
+_cdgh() {
+	if [[ -z ${1} ]]; then
 		local repo_name="$(ghq list | peco --select-1)"
 	else
 		local repo_name="$(ghq list | grep "${1}" | peco --select-1)"
@@ -47,13 +46,11 @@ alias cdgh="_cdgh"
 ### arg1: Optional<String> "{owner}/{repo}"
 ###       if undef, select from interactive list.
 _ghg() {
-	if [[ -z ${1} ]]
-	then
+	if [[ -z ${1} ]]; then
 		local repos="$(mktemp)"
-		ghls -L 100 ndxbn > "${repos}"
-		for owner in $(gh org list)
-		do
-			ghls -L 100 "${owner}" >> "${repos}"
+		ghls -L 100 ndxbn >"${repos}"
+		for owner in $(gh org list); do
+			ghls -L 100 "${owner}" >>"${repos}"
 		done
 		local repo_name="$(cat "${repos}" | peco)"
 		rm "${repos}"
@@ -74,4 +71,3 @@ _ghfork() {
 	git remote add upstream https://github.com/"${1}".git
 }
 alias ghfork="_ghfork"
-

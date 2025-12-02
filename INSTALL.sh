@@ -4,7 +4,7 @@ set -eu
 # valid dotfiles directory path?
 [[ "$(cd "$(dirname "$0")" && pwd)" == "$HOME/dotfiles" ]] || exit 78
 # command exists?
-type stow > /dev/null
+type stow >/dev/null
 
 # Ensure Filesystem Hierarchy
 ## XDG Base Directory
@@ -55,4 +55,3 @@ stow */
 [[ -f ${HOME}/.ssh/config ]] || cp ssh-config "${HOME}/.ssh/config" && chmod 600 "${HOME}/.ssh/config"
 ## touch empty local config if not exist
 [[ -f ${HOME}/.ssh/config-local ]] || touch "${HOME}/.ssh/config-local" && chmod 600 "${HOME}/.ssh/config-local"
-

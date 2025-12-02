@@ -197,7 +197,7 @@ _bun_create_completion() {
 
             # ---- Command: create next
             _arguments -s -C \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             case $state in
@@ -212,7 +212,7 @@ _bun_create_completion() {
 
             # ---- Command: create react
             _arguments -s -C \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             case $state in
@@ -227,7 +227,7 @@ _bun_create_completion() {
 
             # ---- Command: create from other template
             _arguments -s -C \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             case $state in
@@ -285,7 +285,7 @@ _bun_pm_completion() {
             _arguments -s -C \
                 '1: :->cmd' \
                 '2: :->cmd2' \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             ;;
@@ -297,7 +297,7 @@ _bun_pm_completion() {
             _arguments -s -C \
                 '1: :->cmd' \
                 '2: :->cmd2' \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             ;;
@@ -325,7 +325,7 @@ _bun_pm_completion() {
                 '1: :->cmd' \
                 '2: :->cmd2' \
                 '3: :->increment' \
-                $pmargs &&
+                "$pmargs" &&
                 ret=0
 
             case $state in
@@ -920,7 +920,7 @@ _bun_link_param_package_completion() {
     global_node_modules=$install_dir/install/global/node_modules
 
     local -a packages_full_path=(${global_node_modules}/*(N))
-    packages=$(echo $packages_full_path | tr ' ' '\n' | xargs  basename)
+    packages=$(echo "$packages_full_path" | tr ' ' '\n' | xargs  basename)
     _alternative "dirs:directory:(($packages))"
 }
 
@@ -945,14 +945,14 @@ _bun_test_param_script_completion() {
 }
 
 _set_remove() {
-    comm -23 <(echo $1 | sort | tr " " "\n") <(echo $2 | sort | tr " " "\n") 2>/dev/null
+    comm -23 <(echo "$1" | sort | tr " " "\n") <(echo "$2" | sort | tr " " "\n") 2>/dev/null
 }
 
 _bun_add_param_package_completion() {
 
     IFS=$'\n' inexact=($(history -n bun | grep -E "^bun add " | cut -c 9- | uniq))
     IFS=$'\n' exact=($($inexact | grep -E "^$words[$CURRENT]"))
-    IFS=$'\n' packages=($(SHELL=zsh bun getcompletes a $words[$CURRENT]))
+    IFS=$'\n' packages=($(SHELL=zsh bun getcompletes a "$words"["$CURRENT"]))
 
     to_print=$inexact
     if [ ! -z "$exact" -a "$exact" != " " ]; then
@@ -991,7 +991,7 @@ __bun_dynamic_comp() {
         done <<<"$arg"
     done
 
-    return $comp
+    return "$comp"
 }
 
 if ! command -v compinit >/dev/null; then

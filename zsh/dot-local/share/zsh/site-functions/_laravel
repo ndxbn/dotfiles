@@ -59,7 +59,7 @@ _sf_laravel() {
     fi
 
     # Use eval to handle any environment variables and such
-    out=$(eval ${requestComp} 2>/dev/null)
+    out=$(eval "${requestComp}" 2>/dev/null)
 
     while IFS='\n' read -r comp; do
         if [ -n "$comp" ]; then
@@ -75,7 +75,7 @@ _sf_laravel() {
     done < <(printf "%s\n" "${out[@]}")
 
     # Let inbuilt _describe handle completions
-    eval _describe "completions" completions $flagPrefix
+    eval _describe "completions" completions "$flagPrefix"
     return $?
 }
 
