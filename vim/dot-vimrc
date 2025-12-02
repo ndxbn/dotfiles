@@ -6,8 +6,7 @@ set number
 set encoding=utf-8
 set fileencoding=utf-8
 set backspace=indent,eol,start
-set nobackup
-set noswapfile
+set ambiwidth=double
 
 set pastetoggle=<F2>
 
