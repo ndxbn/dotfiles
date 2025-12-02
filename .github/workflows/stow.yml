@@ -10,10 +10,10 @@ jobs:
     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
     - name: Install stow
       run: sudo apt install stow
+    - name: make virtual home
+      run:   mkdir -p "${GITHUB_WORKSPACE}/.home"
     - name: Run Install.sh
       run: |
-        mkdir -p "${GITHUB_WORKSPACE}/.home"
-        rm .stowrc
-        cp .github/stowrc .stowrc
+        cp -v .github/stowrc .stowrc
         HOME="${GITHUB_WORKSPACE}/.home" ./INSTALL.sh
 
