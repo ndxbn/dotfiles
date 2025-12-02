@@ -14,8 +14,9 @@ jobs:
       run: sudo apt install stow
     - name: Run Install.sh
       run: |
-        mkdir -p "${GITHUB_WORKSPACE}/.config"
         pushd "${GITHUB_WORKSPACE}/dotfiles"
+        mkdir -p "${GITHUB_WORKSPACE}/.home"
         echo "-vv" >> .stowrc
-        HOME="${GITHUB_WORKSPACE}" ./INSTALL.sh
+        echo "-t ${GITHUB_WORKSPACE}/.home" >> .stowrc
+        HOME="${GITHUB_WORKSPACE}/.home" ./INSTALL.sh
         popd
