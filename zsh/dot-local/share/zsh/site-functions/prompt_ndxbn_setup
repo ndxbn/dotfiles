@@ -11,10 +11,10 @@ prompt_ndxbn_setup() {
 }
 
 _is_dirty() {
-  ! git diff --no-ext-diff --cached --quiet --exit-code ||
-  ! git diff --no-ext-diff --quiet --exit-code ||
-  # `ls-files` also fast than `status`
-  [ -n "$(git ls-files --others --exclude-standard | head -n1)" ]
+	! git diff --no-ext-diff --cached --quiet --exit-code ||
+	! git diff --no-ext-diff --quiet --exit-code ||
+	# `ls-files` also fast than `status`
+	[ -n "$(git ls-files --others --exclude-standard | head -n1)" ]
 }
 
 prompt_ndxbn_precmd() {
@@ -27,7 +27,7 @@ prompt_ndxbn_precmd() {
 			rline1="%F{red}!${vcs_info_msg_0_}%f"
 		fi
 	fi
-	
+
 	RPROMPT="${rline1}"
 
 	# PROMPT
@@ -48,4 +48,3 @@ ${line2}"
 }
 
 prompt_ndxbn_setup "$@"
-

@@ -9,4 +9,3 @@ set backspace=indent,eol,start
 set ambiwidth=double
 
 set pastetoggle=<F2>
-

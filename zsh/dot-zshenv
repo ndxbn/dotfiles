@@ -3,7 +3,7 @@ setopt no_global_rcs
 # Filesystem Hierarchy
 ## Load XDG Definitions (Single Source of Truth)
 if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
-    source "$HOME/.config/shell/xdg.env.sh"
+	source "$HOME/.config/shell/xdg.env.sh"
 fi
 ## Always use Local Workspaces
 export PREFIX="${HOME}/.local"
@@ -18,17 +18,17 @@ typeset _brew_prefix=""
 typeset _uname_system="$(uname -s)"
 typeset _uname_machine="$(uname -m)"
 if [[ "$_uname_system" == "Linux" ]]; then
-    _brew_prefix="/home/linuxbrew/.linuxbrew"
+	_brew_prefix="/home/linuxbrew/.linuxbrew"
 elif [[ "$_uname_system" == "Darwin" ]]; then
-    if [[ "$_uname_machine" == "arm64" ]]; then
-        _brew_prefix="/opt/homebrew"
-    else
-        _brew_prefix="/usr/local"
-    fi
+	if [[ "$_uname_machine" == "arm64" ]]; then
+		_brew_prefix="/opt/homebrew"
+	else
+		_brew_prefix="/usr/local"
+	fi
 fi
 if [[ -n "$_brew_prefix" && -x "${_brew_prefix}/bin/brew" ]]; then
-    eval "$("${_brew_prefix}/bin/brew" shellenv)"
-    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+	eval "$("${_brew_prefix}/bin/brew" shellenv)"
+	export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 fi
 unset _brew_prefix _uname_machine _uname_system
 ## use GNU on BSD
@@ -62,4 +62,3 @@ export LC_LANG="en_US"
 # ENVs for Runtimes
 export ENV="development"
 export NODE_ENV="development"
-

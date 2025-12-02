@@ -26,4 +26,3 @@ I usually use [zsh](https://www.zsh.org/).
 ```bash
 SHELLCHECK_OPTS='--format diff' .ci/shellcheck | git apply -p2
 ```
-
