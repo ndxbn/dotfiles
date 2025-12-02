@@ -19,3 +19,11 @@ popd
 
 #
 I usually use [zsh](https://www.zsh.org/).
+
+# for Developper
+## How to use shellcheck to fix lint error
+
+```bash
+SHELLCHECK_OPTS='--format diff' .ci/shellcheck | git apply -p2
+```
+
