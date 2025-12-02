@@ -29,11 +29,11 @@
 # These are a lot like their __git_* equivalents inside _git
 
 __gitex_command_successful () {
-  if (( ${#*:#0} > 0 )); then
+	if (( ${#*:#0} > 0 )); then
 	_message 'not a git repository'
 	return 1
-  fi
-  return 0
+	fi
+	return 0
 }
 
 __gitex_commits() {

@@ -33,11 +33,11 @@ fi
 unset _brew_prefix _uname_machine _uname_system
 ## use GNU on BSD
 if [[ "Darwin" = "$(uname -s)" && -n "${HOMEBREW_PREFIX:-}" ]]; then
-  ## gnubin
-  PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
-  PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
-  PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
-  PATH="${HOMEBREW_PREFIX}/opt/gettext/bin:$PATH"
+	## gnubin
+	PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+	PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
+	PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+	PATH="${HOMEBREW_PREFIX}/opt/gettext/bin:$PATH"
 fi
 if [[ "Darwin" = "$(uname -s)" ]]; then
 	## I use podman on Mac
