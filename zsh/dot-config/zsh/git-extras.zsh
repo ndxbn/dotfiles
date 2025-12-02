@@ -95,7 +95,7 @@ __gitex_submodule_names() {
 __gitex_workspace_names() {
     local expl
     declare -a workspace_names
-    workspace_names=($(git bulk --listall | awk '{print $1}' | cut -d "." -f 2))
+    workspace_names=(${(f)"$(git bulk --listall | awk '{print $1}' | cut -d "." -f 2)"})
     __gitex_command_successful || return
     _wanted workspace-names expl workspace-names compadd $* - $workspace_names
 }
