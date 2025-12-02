@@ -40,7 +40,7 @@ __gitex_commits() {
     declare -A commits
     git log --oneline -15 | sed 's/\([[:alnum:]]\{7\}\) /\1:/' | while read commit
     do
-        hash=$(echo $commit | cut -d':' -f1)
+        hash=$(echo "$commit" | cut -d':' -f1)
         commits[$hash]="$commit"
     done
     local ret=1
@@ -52,7 +52,7 @@ __gitex_remote_names() {
     declare -a remote_names
     remote_names=(${(f)"$(_call_program remotes git remote 2>/dev/null)"})
     __gitex_command_successful || return
-    _wanted remote-names expl remote-name compadd $* - $remote_names
+    _wanted remote-names expl remote-name compadd "$*" - "$remote_names"
 }
 
 __gitex_tag_names() {
@@ -60,7 +60,7 @@ __gitex_tag_names() {
     declare -a tag_names
     tag_names=(${${(f)"$(_call_program tags git for-each-ref --format='"%(refname)"' refs/tags 2>/dev/null)"}#refs/tags/})
     __gitex_command_successful || return
-    _wanted tag-names expl tag-name compadd $* - $tag_names
+    _wanted tag-names expl tag-name compadd "$*" - "$tag_names"
 }
 
 
@@ -69,7 +69,7 @@ __gitex_branch_names() {
     declare -a branch_names
     branch_names=(${${(f)"$(_call_program branchrefs git for-each-ref --format='"%(refname)"' refs/heads 2>/dev/null)"}#refs/heads/})
     __gitex_command_successful || return
-    _wanted branch-names expl branch-name compadd $* - $branch_names
+    _wanted branch-names expl branch-name compadd "$*" - "$branch_names"
 }
 
 __gitex_specific_branch_names() {
@@ -77,7 +77,7 @@ __gitex_specific_branch_names() {
     declare -a branch_names
     branch_names=(${${(f)"$(_call_program branchrefs git for-each-ref --format='"%(refname)"' refs/heads/"$1" 2>/dev/null)"}#refs/heads/$1/})
     __gitex_command_successful || return
-    _wanted branch-names expl branch-name compadd - $branch_names
+    _wanted branch-names expl branch-name compadd - "$branch_names"
 }
 
 __gitex_feature_branch_names() {
@@ -89,7 +89,7 @@ __gitex_submodule_names() {
     declare -a submodule_names
     submodule_names=(${(f)"$(_call_program branchrefs git submodule status | awk '{print $2}')"})  # '
     __gitex_command_successful || return
-    _wanted submodule-names expl submodule-name compadd $* - $submodule_names
+    _wanted submodule-names expl submodule-name compadd "$*" - "$submodule_names"
 }
 
 __gitex_workspace_names() {
@@ -97,7 +97,7 @@ __gitex_workspace_names() {
     declare -a workspace_names
     workspace_names=(${(f)"$(git bulk --listall | awk '{print $1}' | cut -d "." -f 2)"})
     __gitex_command_successful || return
-    _wanted workspace-names expl workspace-names compadd $* - $workspace_names
+    _wanted workspace-names expl workspace-names compadd "$*" - "$workspace_names"
 }
 
 __gitex_author_names() {
@@ -105,7 +105,7 @@ __gitex_author_names() {
     declare -a author_names
     author_names=(${(f)"$(_call_program branchrefs git log --format='%aN' | sort -u)"})
     __gitex_command_successful || return
-    _wanted author-names expl author-name compadd $* - $author_names
+    _wanted author-names expl author-name compadd "$*" - "$author_names"
 }
 
 __gitex_author_emails() {
@@ -113,7 +113,7 @@ __gitex_author_emails() {
     declare -a author_names
     author_names=(${(f)"$(_call_program branchrefs git log --format='%aE' | sort -u)"})
     __gitex_command_successful || return
-    _wanted author-names expl author-name compadd $* - $author_names
+    _wanted author-names expl author-name compadd "$*" - "$author_names"
 }
 
 # subcommands
@@ -387,7 +387,7 @@ _git-undo(){
 
 zstyle -g existing_user_commands ':completion:*:*:git:*' user-commands
 
-zstyle ':completion:*:*:git:*' user-commands $existing_user_commands \
+zstyle ':completion:*:*:git:*' user-commands "$existing_user_commands" \
     alias:'define, search and show aliases' \
     abort:'abort current revert, merge, rebase, or cherry-pick process' \
     archive-file:'export the current head of the git repository to an archive' \
