@@ -48,8 +48,8 @@ autoload -Uz promptinit && promptinit
 prompt ndxbn
 
 # Local Plugins
-for config in "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/"*.zsh; do
-    source "$config"
+for config in "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/"*.zsh(N); do
+    [[ -f "$config" ]] && source "$config"
 done
 
 # External Plugins
