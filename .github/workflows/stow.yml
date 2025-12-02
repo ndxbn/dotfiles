@@ -10,6 +10,9 @@ jobs:
     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
       with:
         path: dotfiles
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@main
     - name: Install stow
       run: brew install stow
     - name: Run Install.sh
