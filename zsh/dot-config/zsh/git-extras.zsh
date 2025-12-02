@@ -121,7 +121,7 @@ __gitex_author_emails() {
 _git-authors() {
     _arguments  -C \
         '(--list -l)'{--list,-l}'[show authors]' \
-        '--no-email[without email]' \
+        '--no-email[without email]'
 }
 
 _git-brv() {
@@ -147,13 +147,13 @@ _git-bulk() {
 
 _git-changelog() {
     _arguments \
-        '(-l --list)'{-l,--list}'[list commits]' \
+        '(-l --list)'{-l,--list}'[list commits]'
 }
 
 _git-clear() {
     _arguments \
         '(-f --force)'{-f,--force}'[force clear]' \
-        '(-h --help)'{-h,--help}'[help message]' \
+        '(-h --help)'{-h,--help}'[help message]'
 }
 
 _git-coauthor() {
@@ -466,5 +466,6 @@ zstyle ':completion:*:*:git:*' user-commands $existing_user_commands \
     unlock:'unlock a file excluded from version control' \
     utimes:'change files modification time to their last commit date' \
     unwip:'undo a WIP commit' \
-    wip:'create a WIP commit'
+    wip:'create a WIP commit' \
+	;
 
