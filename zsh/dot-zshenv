@@ -8,7 +8,7 @@ fi
 ## Always use Local Workspaces
 export PREFIX="${HOME}/.local"
 export TMPDIR="${HOME}/.local/tmp"
-mkdir -p ${TMPDIR}
+mkdir -p "${TMPDIR}"
 
 # PATHs
 ## initialize PATH
