@@ -6,7 +6,7 @@ set -eu
 # command exists?
 type stow > /dev/null
 
-# Ensure Filesystem Hierarensure
+# Ensure Filesystem Hierarchy
 ## XDG Base Directory
 ## https://specifications.freedesktop.org/basedir/latest
 . "./shell/dot-config/shell/xdg.env.sh"
