@@ -8,12 +8,13 @@ jobs:
       
     steps:
     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      path: dotfiles
     - name: Install stow
       run: sudo apt install stow
-    - name: make virtual home
-      run:   mkdir -p "${GITHUB_WORKSPACE}/.home"
     - name: Run Install.sh
       run: |
-        cp -v .github/stowrc .stowrc
-        HOME="${GITHUB_WORKSPACE}/.home" ./INSTALL.sh
+        pushd dotfiles
+        echo "-vv" >> .stowrc
+        ./INSTALL.sh
+        popd
 
