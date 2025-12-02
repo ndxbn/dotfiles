@@ -8,7 +8,8 @@ jobs:
       
     steps:
     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-      path: dotfiles
+      with:
+        path: dotfiles
     - name: Install stow
       run: sudo apt install stow
     - name: Run Install.sh
