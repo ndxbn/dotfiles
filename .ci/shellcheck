@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
+while IFS= read -r line; do
+	find . -name "${line}" -exec shellcheck {} +
+done < .ci/shell-exts.txt
 
-find . -name \*.sh -exec shellcheck {} +
-find . -name \*.bash -exec shellcheck {} +
-find . -name \*.zsh -exec shellcheck {} +
-find . -name \*.bashrc -exec shellcheck {} +
-find . -name \*.bash_profile -exec shellcheck {} +
-find . -name \*.zshenv -exec shellcheck {} +
-find . -name \*.zprofile -exec shellcheck {} +
-find . -name \*.zshrc -exec shellcheck {} +
