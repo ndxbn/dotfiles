@@ -32,14 +32,16 @@ if [[ -n "$_brew_prefix" && -x "${_brew_prefix}/bin/brew" ]]; then
 fi
 unset _brew_prefix _uname_machine _uname_system
 ## use GNU on BSD
-if [[ "Darwin" = "$(uname -s)" ]]; then
+if [[ "Darwin" = "$(uname -s)" && -n "${HOMEBREW_PREFIX:-}" ]]; then
   ## gnubin
-  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-  PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
-  PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-  PATH="/opt/homebrew/opt/gettext/bin:$PATH"
-  ## I use podman on Mac
-  PATH="/opt/podman/bin/:${PATH}"
+  PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+  PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
+  PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+  PATH="${HOMEBREW_PREFIX}/opt/gettext/bin:$PATH"
+fi
+if [[ "Darwin" = "$(uname -s)" ]]; then
+	## I use podman on Mac
+	PATH="/opt/podman/bin/:${PATH}"
 fi
 ## under current directory
 PATH="./node_modules/.bin:${PATH}"
