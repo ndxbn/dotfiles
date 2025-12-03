@@ -1,10 +1,10 @@
 function gitignore() {
 	# shellcheck disable=SC2296
-	curl -fLw '\n' https://www.toptal.com/developers/gitignore/api/"${(j:,:)@}"
+	curl -fLw '\n' --max-time 5 https://www.toptal.com/developers/gitignore/api/"${(j:,:)@}"
 }
 
 _gitignoreio_get_command_list() {
-	curl -sfL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n"
+	curl -sfL --max-time 5 https://www.toptal.com/developers/gitignore/api/list 2>/dev/null | tr "," "\n"
 }
 
 _gitignoreio () {
