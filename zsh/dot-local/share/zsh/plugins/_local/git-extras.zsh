@@ -468,4 +468,3 @@ zstyle ':completion:*:*:git:*' user-commands $existing_user_commands \
     unwip:'undo a WIP commit' \
     wip:'create a WIP commit' \
 	;
-

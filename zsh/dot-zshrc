@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # FAILSAFE
 if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
     source "$HOME/.config/shell/xdg.env.sh"
@@ -51,7 +52,7 @@ autoload -Uz promptinit && promptinit
 prompt ndxbn
 
 # Local Plugins
-for config in "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/"*.zsh(N); do
+for config in "${_ZPLUGIN_DIR}/_local/"*.zsh(N); do
     [[ -f "$config" ]] && source "$config"
 done
 
@@ -59,8 +60,6 @@ done
 zload "zsh-users/zsh-autosuggestions"
 zload "chrissicool/zsh-256color"
 
-zload "arzzen/calc.plugin.zsh"
-zload "popstas/zsh-command-time"
 ## The official zsh-syntax-highlighting documentation requires sourcing it at the end of ".zshrc"
 ##   because it installs ZLE hooks and wraps ZLE widgets.
 zload "zsh-users/zsh-syntax-highlighting"

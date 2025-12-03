@@ -23,26 +23,30 @@ alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 alias now='date -Is'
 alias zprofstart='zmodload zsh/zprof'
 alias zprofend='zmodload -u zsh/zprof'
+alias gitprofstart='GIT_TRACE2_PERF=${HOME}/git_trace2.log'
+alias gitprofend='GIT_TRACE2_PERF=0'
 
 # AWS
 alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
 
 # GitHub tools
-## lsgh
-alias ghls="gh repo list --json nameWithOwner --jq '.[].nameWithOwner' --no-archived" 
 ## cdgh
 ### reason to NOT "ghcd", this command may not use GitHub API if not need.
 _cdgh () {
 	if [[ -z ${1} ]]
 	then
 		local repo_name="$(ghq list | peco --select-1)"
+		 #" // hack to avoid IntelliJ ShellScript Coloring bug
 	else
 		local repo_name="$(ghq list | grep ${1} | peco --select-1)"
+		 #" // hack to avoid IntelliJ ShellScript Coloring bug
 	fi
 	test -z "${repo_name}" && return 1
 	pushd "$(ghq root)/${repo_name}"
 }
 alias cdgh="_cdgh"
+## ghls
+alias ghls="gh repo list --json nameWithOwner --jq '.[].nameWithOwner' --no-archived"
 ## ghg: GitHub Get, clone repo and `pushd` under there.
 ### arg1: Optional<String> "{owner}/{repo}"
 ###       if undef, select from interactive list.
