@@ -59,8 +59,10 @@ done
 zload "zsh-users/zsh-autosuggestions"
 zload "chrissicool/zsh-256color"
 
-zload "arzzen/calc.plugin.zsh"
+#zload "arzzen/calc.plugin.zsh"
 zload "popstas/zsh-command-time"
+
 ## The official zsh-syntax-highlighting documentation requires sourcing it at the end of ".zshrc"
 ##   because it installs ZLE hooks and wraps ZLE widgets.
 zload "zsh-users/zsh-syntax-highlighting"
+

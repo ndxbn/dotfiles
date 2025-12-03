@@ -11,9 +11,10 @@ alias grep='grep --color'
 alias vim='vi'
 
 # shorthand
-alias http-server='docker run -v `pwd`:/usr/share/nginx/html:ro -p 8080:80 nginx:alpine'
+alias httpd='docker run -v `pwd`:/usr/share/nginx/html:ro -p 8080:80 nginx:alpine'
 alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 alias venv='python3 -m venv venv && source ./venv/bin/activate'
+alias ty='whence -p'
 # print something
 ## you can get from pP that which venv is activated.
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
