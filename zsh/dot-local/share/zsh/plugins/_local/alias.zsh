@@ -24,8 +24,8 @@ alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 alias now='date -Is'
 alias zprofstart='zmodload zsh/zprof'
 alias zprofend='zmodload -u zsh/zprof'
-alias gitprofstart='GIT_TRACE2_PERF=${HOME}/git_trace2.log'
-alias gitprofend='GIT_TRACE2_PERF=0'
+alias gitprofstart='export GIT_TRACE2_PERF=${HOME}/git_trace2.log'
+alias gitprofend='export GIT_TRACE2_PERF=0'
 
 # AWS
 alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
