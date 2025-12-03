@@ -14,7 +14,6 @@ type stow > /dev/null
 ##   don't use default assignment syntax.
 mkdir -p "${XDG_CONFIG_HOME}" \
 	"${XDG_DATA_HOME}" \
-	"${XDG_CONFIG_HOME}" \
 	"${XDG_STATE_HOME}" \
 	"${HOME}/.local/bin" \
 	"${XDG_CACHE_HOME}"
