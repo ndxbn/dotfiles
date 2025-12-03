@@ -6,7 +6,7 @@ I manage ISSUEs in https://github.com/ndxbn/ndxbn/issues .
 
 # Requirements
 
-- [GNU Stow](https://www.gnu.org/software/stow/)
+- [GNU Stow](https://www.gnu.org/software/stow/) 2.4.1-2 or later
 
 # Installation
 
