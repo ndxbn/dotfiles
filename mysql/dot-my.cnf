@@ -4,4 +4,3 @@ port=3306
 user=ndxbn
 password
 default-character-set=utf8mb4
-

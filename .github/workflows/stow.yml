@@ -5,7 +5,7 @@ on: [push]
 jobs:
   stow:
     runs-on: ubuntu-latest
-      
+
     steps:
     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
       with:
@@ -14,11 +14,10 @@ jobs:
       id: set-up-homebrew
       uses: Homebrew/actions/setup-homebrew@main
     - name: Install stow
-      run: sudo apt update && sudo apt install stow
+      run: brew install stow
     - name: Run Install.sh
       run: |
         pushd dotfiles
         echo "-vv" >> .stowrc
         HOME=${GITHUB_WORKSPACE} ./INSTALL.sh
         popd
-

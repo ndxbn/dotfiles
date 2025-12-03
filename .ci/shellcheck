@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+while IFS= read -r line; do
+	find . -name "${line}" -exec shellcheck {} +
+done <.ci/shell-exts.txt
+
+#find . -type f -path "*/site-functions/*" -exec shellcheck --shell=bash {} +

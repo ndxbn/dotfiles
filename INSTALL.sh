@@ -14,9 +14,10 @@ type stow > /dev/null
 ##   don't use default assignment syntax.
 mkdir -p "${XDG_CONFIG_HOME}" \
 	"${XDG_DATA_HOME}" \
+	"${XDG_CONFIG_HOME}" \
 	"${XDG_STATE_HOME}" \
-	"${XDG_CACHE_HOME}" \
-	"${HOME}/.local/bin"
+	"${HOME}/.local/bin" \
+	"${XDG_CACHE_HOME}"
 
 ## XDG User Directories
 ## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
@@ -54,4 +55,3 @@ stow */
 [[ -f ${HOME}/.ssh/config ]] || cp ssh-config "${HOME}/.ssh/config" && chmod 600 "${HOME}/.ssh/config"
 ## touch empty local config if not exist
 [[ -f ${HOME}/.ssh/config-local ]] || touch "${HOME}/.ssh/config-local" && chmod 600 "${HOME}/.ssh/config-local"
-
