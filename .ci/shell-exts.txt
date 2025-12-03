@@ -1,8 +1,4 @@
 *.sh
 *.bash
-*.zsh
 *.bashrc
 *.bash_profile
-*.zshenv
-*.zshrc
-*.zprofile
