@@ -43,9 +43,12 @@ function zupdate() {
 
 # Completions
 zload "zsh-users/zsh-completions"
+if [[ -d "${_ZPLUGIN_DIR}/zsh-completions/src" ]]; then
+	fpath=("${_ZPLUGIN_DIR}/zsh-completions/src" $fpath)
+fi
 fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions" $fpath)
 autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
+autoload -Uz bashcompinit && bashcompinit
 
 # Prompt Theme
 autoload -Uz promptinit && promptinit
