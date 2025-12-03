@@ -12,35 +12,50 @@
 	excludesfile = ~/.gitignore
 	longpaths = true
 	editor = vim
+	ignorecase = false
+	# `ctrl + c` on zsh main thread, it kills fsm-daemon.
+	fsmonitor = false
+	untrackedCache = true
 [init]
 [alias]
 	logg = log --graph
 	log1 = log --oneline
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
+	sw = switch -c
+	st = status --ignore-submodules=all
+	# better git branch
+	# https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff?permalink_comment_id=5331647
+	bb = for-each-ref --color --sort=-committerdate --format='%(color: bold magenta)%(align:60,left)%(refname:short)%(color:bold red) %(upstream:track,nobracket)%(end)%(color:nobold yellow)%(align:58,left)%(committerdate:format:%Y-%d-%m %H:%M) (%(committerdate:relative), %(committerdate:format:%A %d))%(end)%(color:green)%(align:24,left)%(authorname)%(end)%(color:green)%(align:64,left)%(contents:lines=1)%(end)' refs/heads/
 
-[log]
-	showSignature = true
-
+[rerere]
+	enable = true
+[fetch]
+	writeCommitGraph = true
+[merge]
+	ff = false
 [pull]
 	ff = true
 [push]
 	followTags = true
 	default = current
 
+# Extensions
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-
 [diff "lockb"]
 	textconv = bun
 	binary = true
 [ghq]
 	root = ~/repos
-
+# Commit Sign
 [gpg]
 	format = ssh
 [commit]
 	gpgsign = true
+[log]
+	showSignature = true
+

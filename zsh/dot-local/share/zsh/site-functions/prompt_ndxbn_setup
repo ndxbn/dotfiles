@@ -1,0 +1,50 @@
+prompt_ndxbn_setup() {
+	setopt promptsubst
+
+	autoload -Uz vcs_info
+	autoload -Uz add-zsh-hook
+
+	zstyle ':vcs_info:*' formats '%b'
+	zstyle ':vcs_info:*' actionformats '%b|%a'
+
+	add-zsh-hook precmd prompt_ndxbn_precmd
+}
+
+_is_dirty() {
+	! git diff --no-ext-diff --cached --quiet --exit-code ||
+	! git diff --no-ext-diff --quiet --exit-code ||
+	# `ls-files` also fast than `status`
+	[ -n "$(git ls-files --others --exclude-standard | head -n1)" ]
+}
+
+prompt_ndxbn_precmd() {
+	# Right PROMPT
+	vcs_info
+	local rline1=""
+	if [[ -n "${vcs_info_msg_0_}" ]]; then
+		rline1="%F{green}${vcs_info_msg_0_}%f"
+		if _is_dirty; then
+			rline1="%F{red}!${vcs_info_msg_0_}%f"
+		fi
+	fi
+
+	RPROMPT="${rline1}"
+
+	# PROMPT
+	# authority とかの用語は、 RFC3986 の ABNF を参照
+	## PROMPT = line1 LF line2
+	## line1 = URI-reference 的なもの
+	##   ; authority='%n%F{cyan}@%f%M'
+	##     ; "@" のみ色変え
+	##   ; path_abempty='%F{cyan}%d%f'
+	##   ; authority 部分と path 部分は、別の色にする
+	## line2 = "%#" SP ; ( is_root ? "#" : "%" ) + space
+	##   ; %# は exit code で red bold
+	local line1='%n%F{cyan}@%f%M%F{cyan}%d%f'
+	local line2='%(?.%# .%B%F{red}%#%f%b )'
+
+	PROMPT="${line1}
+${line2}"
+}
+
+prompt_ndxbn_setup "$@"

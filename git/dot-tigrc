@@ -2,4 +2,3 @@ set tab-size = 2
 set main-view-author-width = 15
 set main-view-date-display = custom
 set main-view-date-format = %FT%T
-

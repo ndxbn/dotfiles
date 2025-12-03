@@ -1,2 +1,0 @@
-eval "$(anyenv init - zsh)"
-

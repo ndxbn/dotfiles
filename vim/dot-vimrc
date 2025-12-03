@@ -1,0 +1,11 @@
+set nocompatible
+filetype plugin indent on
+syntax on
+
+set number
+set encoding=utf-8
+set fileencoding=utf-8
+set backspace=indent,eol,start
+set ambiwidth=double
+
+set pastetoggle=<F2>

@@ -1,0 +1,4 @@
+*.sh
+*.bash
+*.bashrc
+*.bash_profile
