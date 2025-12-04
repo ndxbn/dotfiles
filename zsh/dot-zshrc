@@ -48,7 +48,13 @@ if [[ -d "${_ZPLUGIN_DIR}/zsh-completions/src" ]]; then
 	fpath=("${_ZPLUGIN_DIR}/zsh-completions/src" $fpath)
 fi
 fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions" $fpath)
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ${HOME}/.zcompdump(#qN.mh+24) ]]; then
+	compinit -C
+else
+	compinit
+	zcompile ${HOME}/.zcompdump
+fi
 autoload -Uz bashcompinit && bashcompinit
 
 # Prompt Theme
@@ -57,6 +63,9 @@ prompt ndxbn
 
 # Local Plugins
 for config in "${_ZPLUGIN_DIR}/_local/"*.zsh(N); do
+	[[ -f "$config" ]] && source "$config"
+done
+for config in "${XDG_CONFIG_HOME}/zsh/"*.zsh(N); do
 	[[ -f "$config" ]] && source "$config"
 done
 
