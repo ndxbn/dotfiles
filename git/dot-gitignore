@@ -25,7 +25,9 @@ Icon
 .Trash-*
 
 # local files
+*.local
 *.local.*
+*-local*
 
 # Vagrant
 .vagrant/

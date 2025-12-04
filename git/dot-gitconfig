@@ -22,23 +22,44 @@
 	log1 = log --oneline
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
-	sw = switch -c
+	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
 	st = status --ignore-submodules=all
 	# better git branch
 	# https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff?permalink_comment_id=5331647
-	bb = for-each-ref --color --sort=-committerdate --format='%(color: bold magenta)%(align:60,left)%(refname:short)%(color:bold red) %(upstream:track,nobracket)%(end)%(color:nobold yellow)%(align:58,left)%(committerdate:format:%Y-%d-%m %H:%M) (%(committerdate:relative), %(committerdate:format:%A %d))%(end)%(color:green)%(align:24,left)%(authorname)%(end)%(color:green)%(align:64,left)%(contents:lines=1)%(end)' refs/heads/
+	bb = for-each-ref --color --sort=-committerdate --format='%(HEAD) %(align:25,left)%(refname:short)%(end) %(align:30,left)%(upstream:trackshort)%(color:blue)%(upstream:short)%(color:reset)%(upstream:track)%(end) %(align:30,left)%(push:trackshort)%(color:blue)%(push:short)%(color:reset)%(push:track)%(end)' refs/heads/
 
+# Commit Sign
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[log]
+	showSignature = true
+
+# UI
+## nothing
+
+# Conflict Resolution
 [rerere]
 	enable = true
+
+# Remotes
+## fetch
 [fetch]
+	all = true
 	writeCommitGraph = true
+	parallel = 10
 [merge]
 	ff = false
 [pull]
 	ff = true
+## push
+[remote]
+	pushDefault = origin
 [push]
-	followTags = true
 	default = current
+	autoSetupRemote = true
+	followTags = true
 
 # Extensions
 [filter "lfs"]
@@ -51,11 +72,3 @@
 	binary = true
 [ghq]
 	root = ~/repos
-# Commit Sign
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
-[log]
-	showSignature = true
-
