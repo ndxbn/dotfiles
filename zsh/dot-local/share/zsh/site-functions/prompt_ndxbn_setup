@@ -50,7 +50,7 @@ prompt_ndxbn_precmd() {
 	local line1='%n%F{cyan}@%f%M%F{cyan}%d%f'
 	local line2='%(?.%# .%B%F{red}%#%f%b )'
 
-	PROMPT="${line1}
+	PROMPT="${line1}  AWS:${AWS_PROFILE:-x}
 ${line2}"
 }
 

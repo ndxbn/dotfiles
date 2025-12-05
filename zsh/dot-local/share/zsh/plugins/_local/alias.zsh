@@ -19,6 +19,7 @@ alias ty='whence -p'
 ## you can get from pP that which venv is activated.
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
+alias ec='echo $?'
 
 # util
 alias now='date -Is'
@@ -29,6 +30,23 @@ alias gitprofend='export GIT_TRACE2_PERF=0'
 
 # AWS
 alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
+alias awsprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
+
+_assh() {
+	# get EC2 instances and select one
+	# resolve instance id (i-nnnn)
+	# ssh into it
+}
+#alias assh='_assh'
+
+# Git
+_cdroot() {
+	local dir
+	dir=$(git rev-parse --show-toplevel 2>/dev/null)
+	[[ -n ${dir} ]] && cd ${dir}
+
+}
+alias cdroot='_cdroot'
 
 # GitHub tools
 ## cdgh
