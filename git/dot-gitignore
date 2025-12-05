@@ -28,6 +28,7 @@ Icon
 *.local
 *.local.*
 *-local*
+!.stow-local-ignore
 
 # Vagrant
 .vagrant/

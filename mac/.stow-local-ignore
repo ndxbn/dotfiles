@@ -1,0 +1,2 @@
+# don't use symlink under ~/Library directory
+.*
