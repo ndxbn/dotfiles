@@ -18,7 +18,7 @@ _is_dirty() {
 }
 
 _is_under_dotgit() {
-	[[ -n $(pwd | grep ".git") ]]
+	[[ -n $(pwd | grep "/.git") ]]
 }
 
 prompt_ndxbn_precmd() {
