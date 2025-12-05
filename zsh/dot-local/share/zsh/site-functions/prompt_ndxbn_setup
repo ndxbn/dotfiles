@@ -14,14 +14,21 @@ _is_dirty() {
 	! git diff --no-ext-diff --cached --quiet --exit-code ||
 	! git diff --no-ext-diff --quiet --exit-code ||
 	# `ls-files` also fast than `status`
-	[ -n "$(git ls-files --others --exclude-standard | head -n1)" ]
+	[[ -n "$(git ls-files --others --exclude-standard | head -n1)" ]]
+}
+
+_is_under_dotgit() {
+	[[ -n $(pwd | grep ".git") ]]
 }
 
 prompt_ndxbn_precmd() {
 	# Right PROMPT
 	vcs_info
 	local rline1=""
-	if [[ -n "${vcs_info_msg_0_}" ]]; then
+
+	if _is_under_dotgit; then
+		rline1='%F{red}!!! under .git directory !!!%f'
+	elif [[ -n "${vcs_info_msg_0_}" ]]; then
 		rline1="%F{green}${vcs_info_msg_0_}%f"
 		if _is_dirty; then
 			rline1="%F{red}!${vcs_info_msg_0_}%f"
