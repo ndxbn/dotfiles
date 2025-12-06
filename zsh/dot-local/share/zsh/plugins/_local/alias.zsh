@@ -32,12 +32,33 @@ alias gitprofreset=': > ${GIT_TRACE2_PERF}'
 alias gitprofend='export GIT_TRACE2_PERF=0'
 
 # AWS
-alias awlogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
-alias awprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
+alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
+alias awsprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
 
 # ssh into EC2 instance
 awssh() {
-	# get EC2 instances as names and select one
-	# resolve instance id (i-nnnn)
-	# ssh into it
+	local instances_json candidates selection name instance_id
+
+	instances_json=$(aws ec2 describe-instances --output json --filters Name=instance-state-name,Values=running) || return $?
+
+	candidates=$(echo "${instances_json}" | jq -r '
+		(.Reservations // [])[]
+		| (.Instances // [])[]
+		| [
+			((.Tags // []) | map(select(.Key=="Name")) | map(.Value) | first) // "(no-name)",
+			.InstanceId
+		  ] | @tsv
+	') || return 1
+	if [[ -z "${candidates//[$'\t\r\n ']}" ]]; then
+		echo 'no running instances found'
+		return 1
+	fi
+
+	selection=$(printf '%s\n' "${candidates}" | peco) || return 1
+	[[ -z "${selection}" ]] && return 1
+
+	IFS=$'\t' read -r name instance_id <<< "${selection}"
+	[[ -z "${instance_id}" ]] && return 1
+
+	aws ssm start-session --target "${instance_id}"
 }
