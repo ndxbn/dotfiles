@@ -52,13 +52,8 @@ alias cdroot='_cdroot'
 ## cdgh
 ### reason to NOT "ghcd", this command may not use GitHub API if not need.
 _cdgh() {
-	if [[ -z ${1} ]]; then
-		local repo_name="$(ghq list | peco --select-1)"
-		 #" // hack to avoid IntelliJ ShellScript Coloring bug
-	else
-		local repo_name="$(ghq list | grep "${1}" | peco --select-1)"
-		 #" // hack to avoid IntelliJ ShellScript Coloring bug
-	fi
+	local repo_name="$(ghq list | peco --select-1 --query "${1}")"
+	#"# // hack to avoid IntelliJ ShellScript Coloring bug
 	test -z "${repo_name}" && return 1
 	pushd "$(ghq root)/${repo_name}"
 }
