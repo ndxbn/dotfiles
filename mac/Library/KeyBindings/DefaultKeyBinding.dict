@@ -1,3 +1,4 @@
+{
 /* ~/Library/KeyBindings/DefaultKeyBinding.Dict
 ^ : Ctrl
 $ : Shift
@@ -5,7 +6,8 @@ $ : Shift
 @ : Command (Apple)
 # : Numeric Keypad
 
-// https://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CORPCHAR.TXT
+Vendor Keycodes
+see https://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CORPCHAR.TXT
 Up    : \UF700    Backspace:    \U0008        F1:  \UF704
 Down  : \UF701    Tab:          \U0009 or \t  F20: \UF717
 Left  : \UF702    Escape:       \U001B
@@ -17,10 +19,11 @@ End:    \UF72B    Scroll Lock:  \UF72F
 Break:  \UF732    Pause:        \UF730
 SysReq: \UF731    Menu:         \UF735
 Help:   \UF746
+
+Optionキーとの組み合わせで入力される✝などの特殊文字・記号を無効化する
+https://zenn.dev/leaner_dev/articles/20250306-disable-option-special-characters
 */
 
-{
-*/
 /* Remap Home / End keys to be correct */
 "\UF729" = "moveToBeginningOfLine:"; /* Home */
 "\UF72B" = "moveToEndOfLine:"; /* End */
@@ -36,112 +39,4 @@ Help:   \UF746
 "@\UF703" = "moveWordRight:"; /* 単語単位で移動 */
 "@$\UF702" = "moveWordLeftAndModifySelection:"; /* 単語単位で選択 */
 "@$\UF703" = "moveWordRightAndModifySelection:"; /* 単語単位で選択 */
-
-/* Disable Level 3 Characters Input */
-/* 1234 */
-"~1" = ("insertText:", "");
-"~2" = ("insertText:", "");
-"~3" = ("insertText:", "");
-"~4" = ("insertText:", "");
-"~5" = ("insertText:", "");
-"~6" = ("insertText:", "");
-"~7" = ("insertText:", "");
-"~8" = ("insertText:", "");
-"~9" = ("insertText:", "");
-"~0" = ("insertText:", "");
-"~-" = ("insertText:", "");
-"~^" = ("insertText:", "");
-"~¥" = ("insertText:", "\"); /* may be same as default */
-/* qwer */
-"~q" = ("insertText:", "");
-"~w" = ("insertText:", "");
-"~e" = ("insertText:", "");
-"~r" = ("insertText:", "");
-"~t" = ("insertText:", "");
-"~y" = ("insertText:", "");
-"~u" = ("insertText:", "");
-"~i" = ("insertText:", "");
-"~o" = ("insertText:", "");
-"~p" = ("insertText:", "");
-"~@" = ("insertText:", "");
-"~[" = ("insertText:", "");
-/* asdf */
-"~a" = ("insertText:", "");
-"~s" = ("insertText:", "");
-"~d" = ("insertText:", "");
-"~f" = ("insertText:", "");
-"~g" = ("insertText:", "");
-"~h" = ("insertText:", "");
-"~j" = ("insertText:", "");
-"~k" = ("insertText:", "");
-"~l" = ("insertText:", "");
-"~;" = ("insertText:", "");
-"~:" = ("insertText:", "");
-"~]" = ("insertText:", "");
-/* zxcv */
-"~z" = ("insertText:", "");
-"~x" = ("insertText:", "");
-"~c" = ("insertText:", "");
-"~v" = ("insertText:", "");
-"~b" = ("insertText:", "");
-"~n" = ("insertText:", "");
-"~m" = ("insertText:", "");
-"~," = ("insertText:", "");
-"~." = ("insertText:", "");
-"~/" = ("insertText:", "");
-"~_" = ("insertText:", "");
-
-/* Disable Level 4 Characters Input */
-/* 1234 */
-"~!" = ("insertText:", "");
-"~\"" = ("insertText:", "");
-"~#" = ("insertText:", "");
-"~$" = ("insertText:", "");
-"~%" = ("insertText:", "");
-"~&" = ("insertText:", "");
-"~'" = ("insertText:", "");
-"~(" = ("insertText:", "");
-"~)" = ("insertText:", "");
-"~$0" = ("insertText:", "");
-"~=" = ("insertText:", "");
-"~~" = ("insertText:", "");
-"~|" = ("insertText:", "");
-/* qwer */
-"~Q" = ("insertText:", "");
-"~W" = ("insertText:", "");
-"~E" = ("insertText:", "");
-"~R" = ("insertText:", "");
-"~T" = ("insertText:", "");
-"~Y" = ("insertText:", "");
-"~U" = ("insertText:", "");
-"~I" = ("insertText:", "");
-"~O" = ("insertText:", "");
-"~P" = ("insertText:", "");
-"~`" = ("insertText:", "");
-"~{" = ("insertText:", "");
-/* asdf */
-"~A" = ("insertText:", "");
-"~S" = ("insertText:", "");
-"~D" = ("insertText:", "");
-"~F" = ("insertText:", "");
-"~G" = ("insertText:", "");
-"~H" = ("insertText:", "");
-"~J" = ("insertText:", "");
-"~K" = ("insertText:", "");
-"~L" = ("insertText:", "");
-"~+" = ("insertText:", "");
-"~*" = ("insertText:", "");
-"~}" = ("insertText:", "");
-/* zxcv */
-"~Z" = ("insertText:", "");
-"~X" = ("insertText:", "");
-"~C" = ("insertText:", "");
-"~V" = ("insertText:", "");
-"~B" = ("insertText:", "");
-"~N" = ("insertText:", "");
-"~M" = ("insertText:", "");
-"~<" = ("insertText:", "");
-"~>" = ("insertText:", "");
-"~?" = ("insertText:", "");
-
 }
