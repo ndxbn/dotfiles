@@ -43,11 +43,14 @@ function zupdate() {
 }
 
 # Completions
+## zsh-completions
 zload "zsh-users/zsh-completions"
 if [[ -d "${_ZPLUGIN_DIR}/zsh-completions/src" ]]; then
 	fpath=("${_ZPLUGIN_DIR}/zsh-completions/src" $fpath)
 fi
+## My Local Completions
 fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions" $fpath)
+## Execute compinit
 autoload -Uz compinit
 if [[ -n ${HOME}/.zcompdump(#qN.mh+24) ]]; then
 	compinit -C
