@@ -11,6 +11,9 @@ export PREFIX="${HOME}/.local"
 export TMPDIR="${HOME}/.local/tmp"
 mkdir -p "${TMPDIR}"
 
+export DEBUG_LOG_DIR="${TMPDIR}/logs_$(date -I)"
+mkdir -p "${DEBUG_LOG_DIR}"
+
 # PATHs
 ## initialize PATH
 typeset -gx PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'

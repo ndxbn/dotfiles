@@ -29,8 +29,8 @@ alias gitprofstart='export GIT_TRACE2_PERF=${HOME}/git_trace2.log'
 alias gitprofend='export GIT_TRACE2_PERF=0'
 
 # AWS
-alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
-alias awsprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
+alias awlogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
+alias awprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
 
 _assh() {
 	# get EC2 instances and select one
