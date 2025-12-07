@@ -1,0 +1,5 @@
+brew "gh"
+brew "ghq"
+brew "git"
+brew "peco"
+brew "tig"
