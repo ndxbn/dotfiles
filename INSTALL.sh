@@ -9,6 +9,7 @@ type stow > /dev/null
 # Ensure Filesystem Hierarchy
 ## XDG Base Directory
 ## https://specifications.freedesktop.org/basedir/latest
+# shellcheck disable=SC1091
 . "./shell/dot-config/shell/xdg.env.sh"
 ## "xdg.env.sh" MUST export all of these env-vars.
 ##   don't use default assignment syntax.
