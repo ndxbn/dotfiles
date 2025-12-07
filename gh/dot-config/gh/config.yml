@@ -5,6 +5,6 @@ prompt: enabled
 prefer_editor_prompt: disabled
 pager:
 aliases:
-  # co: pr checkout # You may use `ghq get` instead of `gh pr checkout`
+# co: pr checkout # You may use `ghq get` instead of `gh pr checkout`
 http_unix_socket:
 browser:
