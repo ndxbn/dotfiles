@@ -6,5 +6,6 @@ Host i-* mi-*
 	User ssm-user
 
 Host *
+	User ndxbn
 	ServerAliveInterval 10
 	ServerAliveCountMax 12
