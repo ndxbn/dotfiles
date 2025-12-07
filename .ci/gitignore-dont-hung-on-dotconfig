@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+found="$(find ../ -name '.gitignore' | grep 'dot-config/.gitignore')"
+if [[ -n "${found}" ]] ; then
+	echo ${found}
+	exit 3
+fi
