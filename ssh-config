@@ -1,10 +1,5 @@
 Include config-local
 
-# AWS Session Manager
-Host i-* mi-*
-	ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
-	User ssm-user
-
 Host *
 	User ndxbn
 	ServerAliveInterval 10
