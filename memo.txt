@@ -1,0 +1,267 @@
+/usr/share/javascript/
+/usr/share/javascript/">
+/usr/share/apparmor
+/usr/share/distro-info/** r,
+/usr/share/dpkg/** r,
+/usr/share/terminfo/** r,
+/usr/share/transmission/web/** r,
+/usr/share/dpkg/* r,
+/usr/share/code{/bin,}/code flags=(unconfined) {
+/usr/share/groff/** r,
+/usr/share/discord/Discord flags=(unconfined) {
+/usr/share/dpkg/** r,
+/usr/share/keyrings/* r,
+/usr/share/dpkg/** r,
+/usr/share/distro-info/** r,
+/usr/share/dpkg/** r,
+/usr/share/dpkg/** r,
+/usr/share/keyrings/* r,
+/usr/share/*fonts*/conf.avail/*.conf r, # for openSUSE, when showing error message box
+/usr/share/ghostscript/fonts/ r, # for openSUSE, when showing error message box
+/usr/share/hwdata/pnp.ids r, # for openSUSE, when showing error message box, for QXcbConnection::initializeScreens() from libQt5XcbQpa.so
+/usr/share/icu/[0-9]*.[0-9]*/*.dat r, # for openSUSE
+/usr/share/kservices5/{,**} r, # for KProtocolManager::defaultUserAgent() from libKF5KIOCore.so
+/usr/share/mime/ r,
+/usr/share/mime/generic-icons r,
+/usr/share/plasma/look-and-feel/*/contents/defaults r, # TODO: move to kde abstraction?
+/usr/share/sounds/ r,
+/usr/share/ r,
+/usr/share/alsa/** r,
+/usr/share/sounds/ r,
+/usr/share/sounds/** r,
+/usr/share/pipewire/client{,-rt}.conf r,
+/usr/share/locale-bundle/**    r,
+/usr/share/locale-langpack/**  r,
+/usr/share/locale/             r,
+/usr/share/locale/**           r,
+/usr/share/**/locale/**        r,
+/usr/share/zoneinfo{,-icu}/    r,
+/usr/share/zoneinfo{,-icu}/**  r,
+/usr/share/X11/locale/**       r,
+/usr/share/common-licenses/**  r,
+/usr/share/icu/[0-9]*.[0-9]*/*.dat r,
+/usr/share/pocl/** r,
+/usr/share/p11-kit/modules/  r,
+/usr/share/p11-kit/modules/* r,
+/usr/share/perl/**             r,
+/usr/share/perl5/**            r,
+/usr/share/nvidia/** r,
+/usr/share/groff/** r,
+/usr/share/enchant/                              r,
+/usr/share/enchant/enchant.ordering              r,
+/usr/share/enchant-2/                            r,
+/usr/share/enchant-2/enchant.ordering            r,
+/usr/share/hspell/                               r,
+/usr/share/hspell/*.wgz.*                        r,
+/usr/share/hunspell/                             r,
+/usr/share/hunspell/*                            r,
+/usr/share/dict/                                 r,
+/usr/share/dict/*                                r,
+/usr/share/myspell/                              r,
+/usr/share/myspell/**                            r,
+/usr/share/java/                                 r,
+/usr/share/java/zemberek-[0-9]*.jar              r,
+/usr/share/java/zemberek-tr-[0-9]*.jar           r,
+/usr/share/samba/*.dat r,
+/usr/share/samba/codepages/{lowcase,upcase,valid}.dat r,
+/usr/share/nvidia/nvidia-application-profiles* r,
+/usr/share/drirc.d/{,*.conf}    r,
+/usr/share/icu/*/*.dat r,
+/usr/share/php{,5,7,8}/ r,
+/usr/share/php{,5,7,8}/** mr,
+/usr/share/mysql/** r,
+/usr/share/desktop-base/kf5-settings/baloofilerc r,
+/usr/share/desktop-base/kf5-settings/kdeglobals r,
+/usr/share/desktop-base/kf5-settings/kscreenlockerrc r,
+/usr/share/knotifications5/*.notifyrc r, # KNotification::sendEvent()
+/usr/share/kubuntu-default-settings/kf5-settings/* r,
+/usr/share/X11/XKeysymDB r,
+/usr/share/qt3/lib*/libqt-mt*so* mr,
+/usr/share/qt3/lib*/libqui*so* mr,
+/usr/share/qt4/** r,
+/usr/share/terminfo/**           r,
+/usr/share, but for now just do this. (LP: #972367)
+/usr/share/software-center/* Pixr,
+/usr/share/texlive/texmf{,-dist}/web2c/{,**/}* Pixr,
+/usr/share/sounds/freedesktop/** r, # for message box alert sound
+/usr/share/xfce4/helpers/*.desktop r,
+/usr/share/{xfce{,4},xubuntu}/applications/{,*.list} r,
+/usr/share/egl/egl_external_platform.d/{,*} r,
+/usr/share/glvnd/egl_vendor.d/{,*} r,
+/usr/share/vulkan/icd.d/{,*.json} r,
+/usr/share/vulkan/{explicit,implicit}_layer.d/{,*.json} r,
+/usr/share/qt5/translations/*.qm r,
+/usr/share/crypto-policies/*/*.txt r,
+/usr/share/minirok/minirok.py Cxr -> sanitized_helper,
+/usr/share/AbiSuite/fonts/**          r,
+/usr/share/fonts/{,**}                r,
+/usr/share/fonts-*/{,**}              r,
+/usr/share/{fontconfig,fonts-config,*-fonts}/conf.avail/{,**} r,
+/usr/share/ghostscript/fonts/{,**}    r,
+/usr/share/a2ps/fonts/**              r,
+/usr/share/xfce/fonts/**              r,
+/usr/share/ghostscript/fonts/**       r,
+/usr/share/javascript/*/fonts/**      r,
+/usr/share/texmf/{,*/}fonts/**        r,
+/usr/share/texlive/texmf-dist/fonts/** r,
+/usr/share/poppler/cMap/**            r,
+/usr/share/libthai/thbrk.tri          r,
+/usr/share/ssl/openssl.cnf r,
+/usr/share/{mysql,mysql-community-server,mariadb}/charsets/ r,
+/usr/share/{mysql,mysql-community-server,mariadb}/charsets/*.xml r,
+/usr/share/applications/mimeinfo.cache r, # for grep
+/usr/share/terminfo/s/screen r, # for bash on openSUSE
+/usr/share/{,*/}applications/{,*.desktop} r, # for xdg-mime
+/usr/share/xul-ext/notify/**/download_complete_notify.py ix,
+/usr/share/** r,
+/usr/share/** r,
+/usr/share/fonts/** m,
+/usr/share/software-center/software-center Cxr -> sanitized_helper,
+/usr/share/aspell/ r,
+/usr/share/aspell/* r,
+/usr/share/themes/              r,
+/usr/share/themes/**            r,
+/usr/share/gtk-3.0/settings.ini r,
+/usr/share/**/icon-theme.cache  r,
+/usr/share/gvfs/remote-volume-monitors/  r,
+/usr/share/gvfs/remote-volume-monitors/* r,
+/usr/share/cups/charmaps/**      r,
+/usr/share/gnome/applications/ r,
+/usr/share/gnome/applications/mimeinfo.cache r,
+/usr/share/X11/                 r,
+/usr/share/X11/**               r,
+/usr/share/{pyshared,pycentral,python-support}/**      r,
+/usr/share/samba/codepages/{lowcase,upcase,valid}.dat r,
+/usr/share/mime/* r,
+/usr/share/{,*/}applications/{,**} r,
+/usr/share/themes/{,**} r,
+/usr/share/gtksourceview-[0-9]*/{,**} r,
+/usr/share/gtk-2.0/ r,
+/usr/share/gtk-2.0/gtkrc r,
+/usr/share/gtk-{3,4}.0/ r,
+/usr/share/gtk-{3,4}.0/settings.ini r,
+/usr/share/thumbnailers/ r,
+/usr/share/apache2/** r,
+/usr/share/ca-certificates/{,**} r,
+/usr/share/ssl/certs/ca-bundle.crt          r,
+/usr/share
+/usr/share/keyrings/ubuntu-archive-keyring.gpg
+/usr/share/keyrings/ubuntu-archive-keyring.gpg
+/usr/share/dbus-1/system-services/org.freedesktop.PackageKit.service && /usr/bin/test -S /var/run/dbus/system_bus_socket && /usr/bin/gdbus call --system --dest org.freedesktop.PackageKit --object-path /org/freedesktop/PackageKit --timeout 4 --method org.freedesktop.PackageKit.StateHasChanged cache-update > /dev/null; /bin/echo > /dev/null";
+/usr/share/dbus-1/system-services/org.freedesktop.PackageKit.service && /usr/bin/test -S /var/run/dbus/system_bus_socket && /usr/bin/gdbus call --system --dest org.freedesktop.PackageKit --object-path /org/freedesktop/PackageKit --timeout 4 --method org.freedesktop.PackageKit.StateHasChanged cache-update > /dev/null; /bin/echo > /dev/null";
+/usr/share/bash-completion/bash_completion ]; then
+/usr/share/bash-completion/bash_completion
+/usr/share/command-not-found/command-not-found ]; then
+/usr/share/command-not-found/command-not-found ]; then
+/usr/share/command-not-found/command-not-found -- "$1"
+/usr/share/bash-completion/bash_completion
+/usr/share/ca-certificates
+/usr/share/keyrings/debian-archive-keyring.gpg', true)}}
+/usr/share/keyrings/debian-archive-keyring.gpg', true)}}
+/usr/share/doc/packages/ntp/html/accopt.html for
+/usr/share/doc/ntp-doc/html/accopt.html for
+/usr/share/doc/packages/ntp/html/accopt.html for
+/usr/share/doc/ntp-doc/html/accopt.html for
+/usr/share/keyrings/ubuntu-archive-keyring.gpg', true)}}
+/usr/share/keyrings/ubuntu-archive-keyring.gpg', true)}}
+/usr/share/consolefonts/Uni2-Fixed16.psf.gz' 
+/usr/share/consolefonts/Uni2-Fixed16.psf.gz' 
+/usr/share/fontconfig/conf.avail
+/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-BI.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-C.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-L.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-LI.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-M.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-MI.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-RI.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-BI.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-R.ttf</glob>
+/usr/share/fonts/truetype/ubuntu/UbuntuMono-RI.ttf</glob>
+/usr/share/fonts</dir>
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/apport/apport
+/usr/share/apport/apportcheckresume || true
+/usr/share/zoneinfo/||") 
+/usr/share/doc/bash/inputrc.arrows for other codes of arrow keys
+/usr/share/doc/*/copyright.
+/usr/share/javascript")
+/usr/share/javascript")
+/usr/share/i18n/SUPPORTED, and you can add
+/usr/share/man
+/usr/share/man
+/usr/share/man
+/usr/share/man
+/usr/share/man
+/usr/share/man
+/usr/share/man		/var/cache/man
+/usr/share/nano/*.nanorc"
+/usr/share/nano/html.nanorc"
+/usr/share/nano/python.nanorc"
+/usr/share/nano/sh.nanorc"
+/usr/share/nano/extra/ you can find some syntaxes that are
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown ]; then
+/usr/share/i18n/SUPPORTED"
+/usr/share/locale gettext "$1")
+/usr/share"
+/usr/share/bash-completion/bash_completion ]; then
+/usr/share/bash-completion/bash_completion
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/apport/apport
+/usr/share/apport/apportcheckresume || true
+/usr/share/zoneinfo/||") 
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/apport/apport
+/usr/share/apport/apportcheckresume || true
+/usr/share/zoneinfo/||") 
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/apport/apport
+/usr/share/apport/apportcheckresume || true
+/usr/share/zoneinfo/||") 
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/apport/apport
+/usr/share/apport/apportcheckresume || true
+/usr/share/zoneinfo/||") 
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown"
+/usr/share/doc/rsyslog-doc/html/configuration/index.html
+/usr/share/doc/pam-*/txts/README.pam_namespace for more information.
+/usr/share/sgml/dtd/xml-core/catalog
+/usr/share/doc/bash/examples/startup-files for examples.
+/usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+/usr/share/doc/bash-doc/examples in the bash-doc package.
+/usr/share/bash-completion/bash_completion ]; then
+/usr/share/bash-completion/bash_completion
+/usr/share/apport/apport --start
+/usr/share/apport/apport --stop
+/usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+/usr/share/terminfo.
+/usr/share/unattended-upgrades/update-motd-unattended-upgrades ]; then
+/usr/share/unattended-upgrades/update-motd-unattended-upgrades
+/usr/share/vim/vim<version>.
+/usr/share/vim/vimfiles,/usr/share/vim/vim91,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+/usr/share/wsl/ubuntu.ico
+/usr/share/wsl/terminal-profile.json
+/usr/share/'
+/usr/share/$DESKTOP_SESSION*}" ]; then
+/usr/share/"$DESKTOP_SESSION":"$XDG_DATA_DIRS"
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/polkit-1/catalog.xml"/>
+/usr/share/xml/polkit-1/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.xml"/>
+/usr/share/xml/schema/xml-core/catalog.dtd">
+/usr/share/xml/polkit-1/catalog.xml"/>
