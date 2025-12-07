@@ -45,9 +45,6 @@ mkdir -p \
 
 # stow
 # shellcheck disable=SC2035
-## at first, you must stow global config.
-stow stow
-## then, stow all packages.
 stow */
 
 # install ssh-config
