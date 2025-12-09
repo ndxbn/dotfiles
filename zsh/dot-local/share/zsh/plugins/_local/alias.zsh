@@ -4,8 +4,9 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -Al'
 
-# default options
+# grep family
 alias grep='grep --color'
+alias grepR='grep -s -R'
 
 # another name
 alias vim='vi'
