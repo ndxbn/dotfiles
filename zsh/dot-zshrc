@@ -4,15 +4,23 @@ if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
 	source "$HOME/.config/shell/xdg.env.sh"
 fi
 
+# zsh native
+## Disable some builtins
+disable r
 ## History Settings
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh_history"
 [[ -d "$(dirname "$HISTFILE")" ]] || mkdir -p "$(dirname "$HISTFILE")"
+## cd hook and directory list manager
+autoload -Uz add-zsh-hook chpwd_recent_dirs
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 0
 
 # My Plugin Manager
 _ZPLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 mkdir -p ${_ZPLUGIN_DIR}
+hash -d zplug="${_ZPLUGIN_DIR}"
 function zload() {
 	local repo="$1"
 	local plugin_name="${repo:t}"
