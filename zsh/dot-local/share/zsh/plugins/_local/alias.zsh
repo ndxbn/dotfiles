@@ -32,7 +32,7 @@ alias gitprofreset=': > ${GIT_TRACE2_PERF}'
 alias gitprofend='export GIT_TRACE2_PERF=0'
 
 # AWS
-alias awslogin='for prof in $(aws configure list-profiles | xargs echo); do aws sso login --profile ${prof} & ; done'
+alias awschksession='aws configure list-profiles | xargs -P 10 -I {} bash -c "aws sts get-caller-identity --profile {} > /dev/null 2>&1 || echo {}"'
 alias awsprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
 
 # ssh into EC2 instance
