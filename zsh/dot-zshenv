@@ -43,7 +43,6 @@ if [[ "Darwin" = "$(uname -s)" && -n "${HOMEBREW_PREFIX:-}" ]]; then
 	PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
 	PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
 	PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
-	PATH="${HOMEBREW_PREFIX}/opt/gettext/bin:$PATH"
 fi
 if [[ "Darwin" = "$(uname -s)" ]]; then
 	## I use podman on Mac
