@@ -1,8 +1,9 @@
 prompt_ndxbn_setup() {
-	setopt promptsubst
-
 	autoload -Uz vcs_info
 	autoload -Uz add-zsh-hook
+
+	zmodload -ap zsh/parameter dirstack
+	zmodload -ap zsh/parameter jobstates
 
 	zstyle ':vcs_info:*' formats '%b'
 	zstyle ':vcs_info:*' actionformats '%b|%a'
@@ -39,18 +40,19 @@ prompt_ndxbn_precmd() {
 
 	# PROMPT
 	# authority とかの用語は、 RFC3986 の ABNF を参照
-	## PROMPT = line1 LF line2
-	## line1 = URI-reference 的なもの
+	## line1_1 = URI-reference 的なもの
 	##   ; authority='%n%F{cyan}@%f%M'
 	##     ; "@" のみ色変え
 	##   ; path_abempty='%F{cyan}%d%f'
 	##   ; authority 部分と path 部分は、別の色にする
 	## line2 = "%#" SP ; ( is_root ? "#" : "%" ) + space
 	##   ; %# は exit code で red bold
-	local line1='%n%F{cyan}@%f%M%F{cyan}%d%f'
+	local line1_1='%n%F{cyan}@%f%M%F{cyan}%d%f'
+	local line1_2="dirs:${#dirstack} jobs:${#jobstates}"
+	local line1_3="AWS:${AWS_PROFILE:-x}"
 	local line2='%(?.%# .%B%F{red}%#%f%b )'
 
-	PROMPT="${line1}  AWS:${AWS_PROFILE:-x}
+	PROMPT="${line1_1}  ${line1_2}  ${line1_3}
 ${line2}"
 }
 
