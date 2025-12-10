@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
+setopt no_beep
 setopt no_global_rcs
-setopt PUSHD_SILENT
+setopt pushd_silent
 
 # Filesystem Hierarchy
 ## Load XDG Definitions (Single Source of Truth)
