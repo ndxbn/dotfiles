@@ -3,10 +3,16 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -Al'
+alias tree='gio tree'
 
 # grep family
 alias grep='grep --color'
 alias grepR='grep -s -R'
+
+# cwd management
+alias pd='pushd'
+alias po='popd'
+alias d='dirs -v'
 
 # another name
 alias vim='vi'
@@ -16,6 +22,11 @@ alias httpd='docker run -v `pwd`:/usr/share/nginx/html:ro -p 8080:80 nginx:alpin
 alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 alias venv='python3 -m venv venv && source ./venv/bin/activate'
 alias ty='whence -p'
+## git
+alias gia='git add .'
+alias gib='git bb'
+alias gid='git diff'
+alias gis='git st'
 # print something
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
@@ -61,5 +72,6 @@ awssh() {
 	IFS=$'\t' read -r name instance_id <<< "${selection}"
 	[[ -z "${instance_id}" ]] && return 1
 
+	[[ -w ${HOME}/.aws-ssh-history ]] && echo "$(date -Is)\t${AWS_PROFILE}\t${instancer_id}"
 	aws ssm start-session --target "${instance_id}"
 }
