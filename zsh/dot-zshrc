@@ -20,7 +20,6 @@ zstyle ':chpwd:*' recent-dirs-max 0
 # My Plugin Manager
 _ZPLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 mkdir -p ${_ZPLUGIN_DIR}
-hash -d zplug="${_ZPLUGIN_DIR}"
 function zload() {
 	local repo="$1"
 	local plugin_name="${repo:t}"
