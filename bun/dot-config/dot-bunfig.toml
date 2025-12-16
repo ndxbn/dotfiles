@@ -1,7 +1,8 @@
 # you can configure in global bunfig for which command
 # 	https://github.com/oven-sh/bun/blob/main/src/cli.zig
 # 	and then, grep readGlobalConfig
+[install]
+minimumReleaseAge = 259200
 [install.security]
 #scanner = "@socketsecurity/bun-security-scanner"
 scanner = "@bun-security-scanner/osv"
-
