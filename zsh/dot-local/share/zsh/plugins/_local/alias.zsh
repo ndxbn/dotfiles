@@ -48,7 +48,7 @@ alias awschksession='aws configure list-profiles | xargs -P 10 -I {} bash -c "aw
 alias awsprofile='export AWS_PROFILE=$(aws configure list-profiles | peco)'
 
 # ssh into EC2 instance
-awssh() {
+awss() {
 	local instances_json candidates selection name instance_id
 
 	instances_json=$(aws ec2 describe-instances --output json --filters Name=instance-state-name,Values=running) || return $?

@@ -78,6 +78,10 @@ done
 zload "zsh-users/zsh-autosuggestions"
 zload "chrissicool/zsh-256color"
 
+if [[ -f ${HOME}/.local.zshrc ]]; then
+	source ${HOME}/.local.zshrc
+fi
+
 ## The official zsh-syntax-highlighting documentation requires sourcing it at the end of ".zshrc"
 ##   because it installs ZLE hooks and wraps ZLE widgets.
 zload "zsh-users/zsh-syntax-highlighting"
