@@ -31,6 +31,8 @@
 # Commit Sign
 [gpg]
 	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.gitallowedsigners
 [commit]
 	gpgsign = true
 [log]
@@ -72,3 +74,7 @@
 	binary = true
 [ghq]
 	root = ~/repos
+
+# local config for override
+[include]
+	path = ~/.gitconfig.local
