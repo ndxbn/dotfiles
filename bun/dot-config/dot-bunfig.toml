@@ -1,6 +1,8 @@
+# 野良パッケージで不用意に install しちゃったとき用のガードとして。
+# 基本的には各リポジトリの bunfig.toml で明記している。
 # you can configure in global bunfig for which command
 # 	https://github.com/oven-sh/bun/blob/main/src/cli.zig
-# 	and then, grep readGlobalConfig
+# 	-> grep "readGlobalConfig"
 [install]
 minimumReleaseAge = 259200
 [install.security]
