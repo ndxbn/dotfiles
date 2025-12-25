@@ -32,6 +32,9 @@ alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 alias ec='echo $?' # echo Exit Code
 
+# fioncat/otree auto-flush issue workaround
+alias otree="PROMPT='%# ' otree"
+
 # util
 alias now='date -Is'
 # zprof
