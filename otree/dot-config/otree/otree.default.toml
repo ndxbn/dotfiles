@@ -1,0 +1,222 @@
+[tree]
+disable_selected_highlight = false
+selected_symbol = ""
+
+[editor]
+program = "vim"
+args = ["{file}"]
+dir = "/tmp"
+
+[data]
+disable_highlight = false
+max_data_size = 30
+wrap = false
+
+[layout]
+direction = "horizontal"
+tree_size = 40
+
+[header]
+disable = false
+format = "{version} - {data_source} ({content_type}) - {data_size}"
+
+[footer]
+disable = false
+
+[filter]
+disable = false
+ignore_case = false
+exclude_mode = false
+
+[palette]
+
+[colors.header]
+bold = true
+italic = false
+
+[colors.focus_border]
+fg = "magenta"
+bold = true
+italic = false
+
+[colors.footer.root]
+fg = "black"
+bg = "light-cyan"
+bold = true
+italic = false
+
+[colors.footer.identify]
+fg = "black"
+bg = "light-green"
+bold = true
+italic = false
+
+[colors.footer.message]
+fg = "green"
+bold = true
+italic = false
+
+[colors.tree.border]
+fg = "blue"
+bold = false
+italic = false
+
+[colors.tree.selected]
+fg = "black"
+bg = "light_green"
+bold = false
+italic = false
+
+[colors.tree.name]
+bold = false
+italic = false
+
+[colors.tree.filter_keyword]
+fg = "black"
+bg = "yellow"
+bold = false
+italic = false
+
+[colors.tree.type_str]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.type_null]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.type_bool]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.type_num]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.type_arr]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.type_obj]
+fg = "cyan"
+bold = true
+italic = true
+
+[colors.tree.value]
+fg = "dark_gray"
+bold = false
+italic = false
+
+[colors.data.text]
+bold = false
+italic = false
+
+[colors.data.border]
+fg = "blue"
+bold = false
+italic = false
+
+[colors.data.symbol]
+bold = false
+italic = false
+
+[colors.data.name]
+fg = "yellow"
+bold = false
+italic = true
+
+[colors.data.tag]
+fg = "blue"
+bold = true
+italic = false
+
+[colors.data.str]
+fg = "green"
+bold = false
+italic = false
+
+[colors.data.num]
+fg = "red"
+bold = false
+italic = false
+
+[colors.data.null]
+fg = "blue"
+bold = false
+italic = true
+
+[colors.data.bool]
+fg = "red"
+bold = true
+italic = true
+
+[colors.data.section]
+fg = "cyan"
+bold = true
+italic = false
+
+[colors.popup.error_text]
+fg = "red"
+bold = false
+italic = false
+
+[colors.popup.help_name]
+fg = "yellow"
+bold = false
+italic = false
+
+[colors.popup.help_value]
+fg = "green"
+bold = true
+italic = false
+
+[colors.filter.border]
+fg = "blue"
+bold = false
+italic = false
+
+[types]
+str = "str"
+null = "null"
+bool = "bool"
+num = "num"
+arr = "arr"
+obj = "obj"
+
+[keys]
+move_up = ["k", "<up>"]
+move_down = ["j", "<down>"]
+move_left = ["h", "<left>"]
+move_right = ["l", "<right>"]
+select_focus = ["<enter>"]
+select_parent = ["p"]
+select_first = ["g", "<ctrl-a>"]
+select_last = ["G", "<ctrl-l>"]
+close_parent = ["<backspace>"]
+change_root = ["r"]
+reset = ["<esc>"]
+page_up = ["<page-up>", "<ctrl-y>"]
+page_down = ["<page-down>", "<ctrl-e>"]
+change_layout = ["v"]
+tree_scale_up = ["["]
+tree_scale_down = ["]"]
+switch = ["<tab>"]
+edit = ["e"]
+copy_name = ["y"]
+copy_value = ["Y"]
+filter = ["/"]
+filter_key = ["?"]
+filter_value = ["*"]
+filter_next_match = ["n"]
+filter_prev_match = ["N"]
+filter_switch_ignore_case = ["I"]
+expand_children = ["x"]
+expand_all = ["X"]
+show_help = ["H"]
+quit = ["<ctrl-c>", "q"]
+
