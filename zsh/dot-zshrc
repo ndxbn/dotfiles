@@ -85,3 +85,6 @@ fi
 ## The official zsh-syntax-highlighting documentation requires sourcing it at the end of ".zshrc"
 ##   because it installs ZLE hooks and wraps ZLE widgets.
 zload "zsh-users/zsh-syntax-highlighting"
+
+# bun completions
+[ -s "/home/ndxbn/.bun/_bun" ] && source "/home/ndxbn/.bun/_bun"
