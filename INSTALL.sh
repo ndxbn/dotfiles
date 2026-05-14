@@ -55,3 +55,7 @@ stow */
 [[ -f ${HOME}/.ssh/config ]] || cp ssh-config "${HOME}/.ssh/config" && chmod 600 "${HOME}/.ssh/config"
 ## touch empty local config if not exist
 [[ -f ${HOME}/.ssh/config-local ]] || touch "${HOME}/.ssh/config-local" && chmod 600 "${HOME}/.ssh/config-local"
+
+# ensure .gitconfig.local
+[[ -f ${HOME}/.gitconfig.local ]] || touch "${HOME}/.gitconfig.local" && chmod 644 "${HOME}/.gitconfig.local"
+
