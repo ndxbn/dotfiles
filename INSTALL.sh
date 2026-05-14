@@ -57,5 +57,5 @@ stow */
 [[ -f ${HOME}/.ssh/config-local ]] || touch "${HOME}/.ssh/config-local" && chmod 600 "${HOME}/.ssh/config-local"
 
 # ensure .gitconfig.local
-[[ -f ${HOME/.gitconfig.local ]] || touch "${HOME}/.gitconfig.local" && chmod 644 "${HOME}/.gitconfig.local"
+[[ -f ${HOME}/.gitconfig.local ]] || touch "${HOME}/.gitconfig.local" && chmod 644 "${HOME}/.gitconfig.local"
 
