@@ -18,15 +18,17 @@ alias d='dirs -v'
 alias vim='vi'
 
 # shorthand
+alias b='bat'
 alias httpd='docker run -v `pwd`:/usr/share/nginx/html:ro -p 8080:80 nginx:alpine'
 alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 alias venv='python3 -m venv venv && source ./venv/bin/activate'
 alias ty='whence -p'
 ## git
-alias gia='git add .'
-alias gib='git bb'
-alias gid='git diff'
-alias gis='git st'
+alias gita='git add .'
+alias gitb='git bb'
+alias gitc='git config'
+alias gitd='git diff'
+alias gitst='git st'
 # print something
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
