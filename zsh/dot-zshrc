@@ -86,5 +86,3 @@ fi
 ##   because it installs ZLE hooks and wraps ZLE widgets.
 zload "zsh-users/zsh-syntax-highlighting"
 
-# bun completions
-[ -s "/home/ndxbn/.bun/_bun" ] && source "/home/ndxbn/.bun/_bun"
