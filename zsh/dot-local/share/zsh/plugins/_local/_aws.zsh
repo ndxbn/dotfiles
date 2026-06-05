@@ -1,1 +1,2 @@
-complete -C aws_completer aws
+export AWS_CLI_AUTO_PROMPT="on-partial"
+
