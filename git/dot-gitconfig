@@ -22,6 +22,8 @@
 	log1 = log --oneline
 	logg1 = log --graph --oneline
 	pullupstream = pull upstream main
+	amend = commit --amend --no-edit
+	a = add .
 	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
 	st = status --ignore-submodules=all
 	# better git branch
