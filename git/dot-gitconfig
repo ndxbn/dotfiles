@@ -18,10 +18,24 @@
 	untrackedCache = true
 [init]
 [alias]
+	# log
 	logg = log --graph
 	log1 = log --oneline
 	logg1 = log --graph --oneline
+	#
+	ffmain = merge --ff origin/main
 	pullupstream = pull upstream main
+	#
+	amend = commit --amend --no-edit
+	#
+	global-config-edit = config --global --edit
+	# shorhands
+	a = add .
+	b = bb
+	c = commit
+	#d = diff ## `git di<TAB>` is enough usability
+	g = config --global --edit
+	s = sw
 	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
 	st = status --ignore-submodules=all
 	# better git branch
