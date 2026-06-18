@@ -76,7 +76,8 @@ awss() {
 	IFS=$'\t' read -r name instance_id <<< "${selection}"
 	[[ -z "${instance_id}" ]] && return 1
 
-	[[ -w ${HOME}/.aws-ssh-history ]] && echo "$(date -Is)\t${AWS_PROFILE}\t${instancer_id}" >> ${HOME}/.aws-ssh-history
-	echo "$(date -Is)\t${AWS_PROFILE}\t${instancer_id}"
+	[[ -w ${HOME}/.aws-ssh-history ]] && echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}" >> ${HOME}/.aws-ssh-history
+	echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}"
 	aws ssm start-session --target "${instance_id}"
+	echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}"
 }
