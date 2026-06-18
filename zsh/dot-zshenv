@@ -48,9 +48,6 @@ if [[ "Darwin" = "$(uname -s)" ]]; then
 	## I use podman on Mac
 	PATH="/opt/podman/bin/:${PATH}"
 fi
-## under current directory
-PATH="./node_modules/.bin:${PATH}"
-PATH="./vendor/bin:${PATH}"
 export PATH="${PATH}"
 
 # Editor, Terminal
