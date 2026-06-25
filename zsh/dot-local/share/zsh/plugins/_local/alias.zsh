@@ -77,7 +77,7 @@ awss() {
 	[[ -z "${instance_id}" ]] && return 1
 
 	[[ -w ${HOME}/.aws-ssh-history ]] && echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}" >> ${HOME}/.aws-ssh-history
-	echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}"
+	echo "$(date -Is)\t${AWS_PROFILE}\t${name}\t${instance_id}"
 	aws ssm start-session --target "${instance_id}"
-	echo "$(date -Is)\t${AWS_PROFILE}\t${instance_id}"
+	echo "$(date -Is)\t${AWS_PROFILE}\t${name}\t${instance_id}"
 }
