@@ -2,7 +2,11 @@
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
-alias lla='ls -Al'
+### more verbose
+alias lla='ls -al -iZ --author'
+### file and dirs list per line
+alias li='ls -1AF'
+### tree
 alias tree='gio tree'
 
 # grep family
