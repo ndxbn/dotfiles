@@ -27,13 +27,11 @@
 	pullupstream = pull upstream main
 	#
 	amend = commit --amend --no-edit
-	#
-	global-config-edit = config --global --edit
 	# shorhands
 	a = add .
 	b = bb
 	c = commit
-	#d = diff ## `git di<TAB>` is enough usability
+	#d = diff ## use `git di<TAB>`
 	g = config --global --edit
 	s = sw
 	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"

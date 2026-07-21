@@ -27,21 +27,17 @@ alias httpd='docker run -v `pwd`:/usr/share/nginx/html:ro -p 8080:80 nginx:alpin
 alias tmp='pushd "$(TMPDIR=${HOME}/.local/tmp mktemp -d)"'
 alias venv='python3 -m venv venv && source ./venv/bin/activate'
 alias ty='whence -p'
-## git
-### You SHOULD use "git-config [alias] section" for simple shorthand.
-alias git-addAll-amend='git add . && git commit --amend --no-edit'
-alias git-fetch-ff='git fetch && git merge --ff origin/main'
-alias git-push-pr='git push && gh pr create --fill --draft'
 # print something
 alias pP='echo ${PATH} | sed -e "s/:/\n/g"'
 alias pF='echo ${FPATH} | sed -e "s/:/\n/g"'
 alias ec='echo $?' # echo Exit Code
 
-# fioncat/otree auto-flush issue workaround
+# workaround for "fioncat/otree" auto-flush issue
 alias otree="PROMPT='%# ' otree"
 
 # util
 alias now='date -Is'
+
 # zprof
 alias zprofstart='zmodload zsh/zprof'
 alias zprofend='zmodload -u zsh/zprof'
