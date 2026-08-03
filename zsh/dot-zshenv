@@ -66,3 +66,8 @@ export LANG="en_US.UTF-8"
 # ENVs for Runtimes
 export ENV="development"
 export NODE_ENV="development"
+
+# CLI Tools default settings
+## AWS CLI
+export AWS_DEFAULT_REGION="ap-northeast-1"
+
