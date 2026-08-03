@@ -7,4 +7,4 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 export PATH="${HOME}/.local/bin:${PATH}"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
-# You SHOULD NOT set XDG_XXX_DIRS env vars. They MAY be set by OS level operation.
+# You SHOULD NOT set XDG_XXX_DIR and XDG_XXX_DIRS env vars. They MAY be set by OS level operation.
