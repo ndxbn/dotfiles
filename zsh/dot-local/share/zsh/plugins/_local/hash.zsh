@@ -9,9 +9,10 @@ hash -d xconfig="${XDG_CONFIG_HOME}"
 hash -d xstate="${XDG_STATE_HOME}"
 hash -d xcache="${XDG_CACHE_HOME}"
 
-# for zsh scripts
-hash -d debuglog="${DEBUG_LOG_DIR}"
-hash -d plug="${_ZPLUGIN_DIR}"
-## with "z" prefix
-hash -d zdebuglog="${DEBUG_LOG_DIR}"
-hash -d zplug="${_ZPLUGIN_DIR}"
+# shortcut links
+hash -d logs="${DEBUG_LOG_DIR}"
+hash -d plugins="${_ZPLUGIN_DIR}"
+
+## with "zsh" prefix
+hash -d zshdebuglog="${DEBUG_LOG_DIR}"
+hash -d zshplugins="${_ZPLUGIN_DIR}"
