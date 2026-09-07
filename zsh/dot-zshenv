@@ -50,6 +50,9 @@ if [[ "Darwin" = "$(uname -s)" ]]; then
 fi
 export PATH="${PATH}"
 
+# Homebrew
+export HOMEBREW_AUTO_UPDATE_SECS=3600
+
 # Editor, Terminal
 export EDITOR="vim"
 export TERMINFO="${HOME}/.terminfo"
