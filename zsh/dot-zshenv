@@ -5,8 +5,8 @@ setopt pushd_silent
 
 # Filesystem Hierarchy
 ## Load XDG Definitions (Single Source of Truth)
-if [[ -f "$HOME/.config/shell/xdg.env.sh" ]]; then
-	source "$HOME/.config/shell/xdg.env.sh"
+if [[ -f "{$HOME}/.config/shell/xdg.env.sh" ]]; then
+	source "${HOME}/.config/shell/xdg.env.sh"
 fi
 ## Always use Local Workspaces
 export PREFIX="${HOME}/.local"
@@ -40,9 +40,9 @@ unset _brew_prefix _uname_machine _uname_system
 ## use GNU on BSD
 if [[ "Darwin" = "$(uname -s)" && -n "${HOMEBREW_PREFIX:-}" ]]; then
 	## gnubin
-	PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
-	PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
-	PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+	PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+	PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
+	PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
 fi
 if [[ "Darwin" = "$(uname -s)" ]]; then
 	## I use podman on Mac
