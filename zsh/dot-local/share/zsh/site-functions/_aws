@@ -1,0 +1,12 @@
+#compdef aws
+
+_aws() {
+	(( $+commands[aws_completer] )) || return 1
+
+	autoload -Uz bashcompinit && bashcompinit
+	complete -C aws_completer aws
+
+	# Complete the current command line; subsequent calls go directly through
+	# the registration above instead of this lazy initializer.
+	_bash_complete -C aws_completer
+}
