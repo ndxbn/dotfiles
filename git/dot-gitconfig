@@ -21,7 +21,7 @@
 	# log
 	logg = log --graph
 	log1 = log --oneline
-	logg1 = log --graph --oneline
+	logg1 = log --graph --oneline --no-show-signature
 	#
 	ffmain = merge --ff origin/main
 	pullupstream = pull upstream main
@@ -33,6 +33,7 @@
 	c = commit
 	#d = diff ## use `git di<TAB>`
 	g = config --global --edit
+	l = logg1
 	s = sw
 	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
 	st = status --ignore-submodules=all
