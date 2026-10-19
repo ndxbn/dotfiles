@@ -85,8 +85,6 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
-[ghq]
-	root = ~/repos
 
 # local config for override
 [include]
