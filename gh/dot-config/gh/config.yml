@@ -5,6 +5,9 @@ prompt: enabled
 prefer_editor_prompt: disabled
 pager:
 aliases:
+    following: api /user/following --paginate
+    followers: api /user/followers --paginate
+    favs: api /user/starred --paginate
 # co: pr checkout # You may use `ghq get` instead of `gh pr checkout`
 http_unix_socket:
 browser:
