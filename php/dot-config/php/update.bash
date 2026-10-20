@@ -8,5 +8,3 @@ curl -L https://raw.githubusercontent.com/php/php-src/refs/heads/master/php.ini-
 # remove comments
 grep -v '^; .*' "${original_file_name}" | grep -v '^$' | grep -v '^;;;.*' | grep -v '^;$'  > php.default.ini
 
-rm "${original_file_name}"
-
