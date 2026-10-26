@@ -15,9 +15,14 @@ jobs:
       uses: Homebrew/actions/setup-homebrew@main
     - name: Install stow
       run: brew install stow
+    - name: Install Dependencies
+      run: |
+        pushd dotfiles
+        brew bundle
+        popd
     - name: Run Install.sh
       run: |
         pushd dotfiles
         echo "-vv" >> .stowrc
-        HOME=${GITHUB_WORKSPACE} ./INSTALL.sh
+        HOME=${GITHUB_WORKSPACE} ./INSTALL.bash
         popd

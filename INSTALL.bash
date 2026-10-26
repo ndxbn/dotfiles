@@ -19,31 +19,6 @@ mkdir -p "${XDG_CONFIG_HOME}" \
 	"${HOME}/.local/bin" \
 	"${XDG_CACHE_HOME}"
 
-## XDG User Directories
-## https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
-## "usr-dirs.dirs" file might exist if OS have XDG template in home directory skelton.
-USER_DIRS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs"
-# shellcheck source=/dev/null
-[[ -f "$USER_DIRS_FILE" ]] && . "$USER_DIRS_FILE"
-## fill with default
-: "${XDG_DESKTOP_DIR:=$HOME/Desktop}"
-: "${XDG_DOWNLOAD_DIR:=$HOME/Downloads}"
-: "${XDG_TEMPLATES_DIR:=$HOME/Templates}"
-: "${XDG_PUBLICSHARE_DIR:=$HOME/Public}"
-: "${XDG_DOCUMENTS_DIR:=$HOME/Documents}"
-: "${XDG_MUSIC_DIR:=$HOME/Music}"
-: "${XDG_PICTURES_DIR:=$HOME/Pictures}"
-: "${XDG_VIDEOS_DIR:=$HOME/Videos}"
-mkdir -p \
-	"$XDG_DESKTOP_DIR" \
-	"$XDG_DOWNLOAD_DIR" \
-	"$XDG_TEMPLATES_DIR" \
-	"$XDG_PUBLICSHARE_DIR" \
-	"$XDG_DOCUMENTS_DIR" \
-	"$XDG_MUSIC_DIR" \
-	"$XDG_PICTURES_DIR" \
-	"$XDG_VIDEOS_DIR"
-
 # stow
 # shellcheck disable=SC2035
 stow */
