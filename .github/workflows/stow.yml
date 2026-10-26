@@ -15,10 +15,10 @@ jobs:
       uses: Homebrew/actions/setup-homebrew@main
     - name: Install stow
       run: brew install stow
-    - name: Lint Brewfile
+    - name: Install Dependencies
       run: |
         pushd dotfiles
-        brew bundle check --verbose
+        brew bundle
         popd
     - name: Run Install.sh
       run: |
