@@ -19,5 +19,5 @@ jobs:
       run: |
         pushd dotfiles
         echo "-vv" >> .stowrc
-        HOME=${GITHUB_WORKSPACE} ./INSTALL.sh
+        HOME=${GITHUB_WORKSPACE} ./INSTALL.bash
         popd
