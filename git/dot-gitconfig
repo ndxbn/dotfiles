@@ -26,16 +26,17 @@
 	pullupstream = pull upstream main
 	#
 	amend = commit --amend --no-edit
+	empty-commit = commit --allow-empty -m "empty commit"
 	# shorhands
 	a = add .
-	b = bb
 	c = commit
 	#d = diff ## use `git di<TAB>`
 	g = config --global --edit
 	l = logg1
-	s = sw
-	sw = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
-	st = status --ignore-submodules=all
+	swi = "!f() { git switch \"$1\" 2>/dev/null || git switch -c \"$1\"; }; f"
+	sta = status --ignore-submodules=all
+	wa = worktree add
+	wl = worktree list
 	# better git branch
 	# https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff?permalink_comment_id=5331647
 	bb = for-each-ref --color --sort=-committerdate --format='%(HEAD) %(align:25,left)%(refname:short)%(end) %(align:30,left)%(upstream:trackshort)%(color:blue)%(upstream:short)%(color:reset)%(upstream:track)%(end) %(align:30,left)%(push:trackshort)%(color:blue)%(push:short)%(color:reset)%(push:track)%(end)' refs/heads/
