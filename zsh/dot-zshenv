@@ -5,7 +5,7 @@ setopt pushd_silent
 
 # Filesystem Hierarchy
 ## Load XDG Definitions (Single Source of Truth)
-if [[ -f "{$HOME}/.config/shell/xdg.env.sh" ]]; then
+if [[ -f "${HOME}/.config/shell/xdg.env.sh" ]]; then
 	source "${HOME}/.config/shell/xdg.env.sh"
 fi
 ## Always use Local Workspaces
