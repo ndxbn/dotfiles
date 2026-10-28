@@ -26,7 +26,7 @@
 	pullupstream = pull upstream main
 	#
 	amend = commit --amend --no-edit
-	empty-commit = commit --allow-empty -m "empty commit"
+	empty-commit = commit --allow-empty --message=empty_commit
 	# shorhands
 	a = add .
 	c = commit
