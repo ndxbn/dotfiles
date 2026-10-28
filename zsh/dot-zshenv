@@ -69,6 +69,8 @@ export LANG="en_US.UTF-8"
 # ENVs for Runtimes
 export ENV="development"
 export NODE_ENV="development"
+# PHP_ENV is application-specific; set it per project instead of here.
+export PHP_INI_SCAN_DIR=":${XDG_CONFIG_HOME}/php/conf.d"
 
 # CLI Tools default settings
 ## AWS CLI
